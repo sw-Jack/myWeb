@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- form 태그 -->
+	
+	<!-- input 태그 -->
+	<!-- 텍스트 필드 : 한줄 입력-->
+	이름 : <input type="text" name="member_name">
+	<br><br>
+	
+	<!-- 패스워드 필드 -->
+	비밀번호 : <input type="password" name="member_pw">
+	<br><br>
+	
+	<!-- textarea 필드 -->
+	<textarea row="5" cols="30" name="contents">메모를 입력하세요...</textarea>
+	<br><br>
+	
+	<!-- select box = combo box -->
+	<select name="job">
+		<option value="">직업 선택</option>
+		<option value="student">학생</option>
+		<option value="officer">사무관</option>
+		<option value="etc">기타</option>
+	</select>
+	<br><br>
+	<!-- select box 초기값 설정 -->
+	<select name="sports">
+		<option value="">종목 선택</option>
+		<option value="soccer">축구</option>
+		<option value="basketball">농구</option>
+		<option value="baseball" selected="selected">야구</option> <!-- 초기값 -->
+		<option value="volleyball">배구</option>
+		<option value="etc">기타</option>
+	</select>
+	<br><br>
+	
+	<!-- combo box : 여러 개 선택 가능 => 체크 박스 name 속성 값은 항상 동일하게 -->
+	<input type="checkbox" name="chk" value="HTML"> HTML
+	<input type="checkbox" name="chk" value="JSP"> JSP
+	<input type="checkbox" name="chk" value="JQuery"> JQuery
+	<input type="checkbox" name="chk" value="Python"> Python
+	<input type="checkbox" name="chk" value="Java"> Java
+	<input type="checkbox" name="chk" value="Vue.js"> Vue.js
+	<br><br>
+	
+	<!-- 라디오 버튼 : 체크 박스와 비슷하나 하나만 선택 가능-->
+	<input type="radio" name="rad" value="HTML"> HTML
+	<input type="radio" name="rad" value="CSS"> CSS
+	<input type="radio" name="rad" value="JavaScript"> JavaScript
+	<br><br>
+	
+	<!-- 리셋 버튼 : form에 입력한 모든 값 초기화-->
+	<form name="input" method="post" action="">
+		이름 &nbsp<input type="text" name="member_name" maxlength="10">
+		<br><br>
+		<input type="button" value="입력">
+		<input type="reset" value="초기화">
+	</form>
+	<br><br>
+	
+	<!-- 전송 버튼 -->
+	<form name="input" method="post" action="">
+		이름 &nbsp<input type="text" name="member_name" maxlength="10">
+		<br><br>
+		<input type="button" value="입력">
+		<input type="reset" value="초기화">	
+		<input type="submit" value="전송">
+	</form>	
+	<br><br>
+	
+	<!-- 이미지 버튼 : 전송 버튼 역할을 하는 이미지, 이미지 클릭하면 전송 기능 수행 -->
+	<input type="image" src="/myhtml/image/javaline2_131-33.png">
+	<br><br>
+	
+	<!-- 파일 -->
+	<input type="file" name="file_name">
+	<br><br>
+	
+	<!-- 파일 첨부 기능이 있는 폼을 만들 때는 반드시 form 태그에 enctype 속성을
+	multipart/form-data로 지정해줘야 함 -->
+	<form action="" method="post" enctype="multipart/form-data" name="">
+		<input type="file" name="file_name">
+	</form>
+	<br><br>
+	
+	<!-- label -->
+	<label for="html">HTML </label> <input type="checkbox" name="chk" id="html">
+	<label for="css">CSS </label> <input type="checkbox" name="chk" id="css">
+	<br><br>
+	
+	<!-- Fieldset / Legend -->
+	<!-- Fieldset은 서로 연관있는 컨트롤들을 하나로 묶을 수 있도록 해주며, Legend는 제목을 붙이는 역할을 함 -->
+	<fieldset>
+		<legend><b>메일링 리스트</b></legend>
+		<input type="checkbox"> HTML
+		<input type="checkbox"> CSS
+		<input type="checkbox"> JavaScript			
+	</fieldset>
+	 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</body>
+</html>
