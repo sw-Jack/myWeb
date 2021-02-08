@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- 텍스트 color -->
+	<style type="text/css">
+		a {color:red} /*a 태그는 모두 빨간색으로*/
+		a:hover {color:green} /*마우스 커서 올려 놓았을 때*/
+	</style>
+	
+	<p><a href="http://www.kgitbank.co.kr" target="_blank">아이티뱅크</a>
+	는 IT 교육을 선도하는 대한민국 대표 IT 교육 기업입니다.</p>
+	
+	<!-- 텍스트 direction -->
+	<p style="direction:ltr">direction 속성값을 ltr(왼쪽정렬)로 지정한 문단</p>
+	<p style="direction:rtl">direction 속성값을 rtl(오른쪽정렬)로 지정한 문단</p>
+	
+	<!-- 텍스트 background color -->
+	<p style="background-color:yellow;">문단의 배경색을 노란색으로 지정</p>
+	<!-- 문단의 일부에만 배경색을 적용하려면 span 태그 사용 -->
+	<p>문단의 일부분의 배경색을<span style="background-color:cyan";>cyan</span>으로 지정</p>
+	
+	<!-- 테이블 background color -->
+	<table border="1">
+		<tr>
+			<td style="background-color:pink";>테이블 배경</td>
+		</tr>
+		<tr>
+			<td>테이블의 배경색을 지정하는데 사용하는 속성</td>
+		 </tr>
+	</table>
+	
+	<!-- 텍스트 line-height : 라인의 높이, 즉 줄 간격 -->
+	<p style="line-height:10px; background-color:gray;">라인의 높이를 10px로 지정</p>
+	<p style="line-height:30px; background-color:gray;">라인의 높이를 30px로 지정</p>
+	<p style="width:200; line-height:140%; background-color:skyblue">라인의 높이를 비율에 따라 지정, 한글의 경우 130~160%가 적당</p>
+
+	<!-- 텍스트 letter-spacing : 글자 간격 -->
+	<p>일반적인 문장</p>
+	<p style="letter-spacing:2px">글자 사이의 간격을 넓힌 문장1</p>
+	<p style="letter-spacing:4px">글자 사이의 간격을 넓힌 문장2</p>
+	
+	<!-- 텍스트 text-align : 텍스트 정렬 -->
+	<p style="text-align:left">왼쪽 정렬입니다.</p>
+	<p style="text-align:right">오른쪽 정렬입니다.</p>
+	<p style="text-align:center">가운데 정렬입니다.</p>
+	<p style="text-align:justify; width:200px;">맞춤 정렬입니다. 자동 줄 바꿈 시 오른쪽 경계선 부분이 정리됩니다. 줄 바꿈을 나타내기 위해 너비 200 설정</p>
+  		
+	<!-- 텍스트 text-decoration -->
+	<p style="text-decoration:underline">underline</p>
+	<p style="text-decoration:overline">overline</p>
+	<p style="text-decoration:line-through">line-through</p>
+	<p style="text-decoration:blink">blink</p>
+	
+	<style type="text/css">
+		a:link {text-decoration:underline;}
+		a:visited {color:blue;}
+		a:active {text-decoration:none;}
+		a:hover {color:red}
+	</style>
+	<a href="http://www.kgitbank.co.kr" target="_blank">아이티뱅크</a>는 국내 1위 IT 전문 교육 기업
+
+
+	<!-- 텍스트 text-indent : 들여쓰기 효과 -->
+	<p>일반적인 문단입니다.</p>
+	<p style="text-indent:10px; width:300px">10px 들여쓰기 한 문장입니다.우리 말의 경우 문단의 첫 부분에서 들여쓰기를 하므로
+	해당 속성을 사용하면 좋습니다.</p>
+	
+	<!-- 텍스트 word-spacing -->
+	<p>일반적인 문단입니다.</p>
+	<p style="word-spacing:10px">word-spacing 속성 값으로 10px을 지정한 문단입니다.</p>
+	
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

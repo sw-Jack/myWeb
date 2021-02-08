@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- CSS 배경 -->
+	<div style="height:50px; background-color:cyan">
+		cyan 배경색이 지정된 예제		
+	</div>
+	<div style="height:50px; background-color:#FFFFF0">
+		ivory 배경색이 지정된 예제		
+	</div>
+	
+	<!-- CSS 배경 이미지 : background-image -->
+	<div style="width:250px; height:250px; background-image:url(/myhtml/image/background01.gif)">
+		배경 이미지
+	</div>
+	<br><br>
+	
+	<!-- CSS 배경 이미지 반복 : background-repeat -->
+	<div style="width:500px; height:250px; background-image:url(/myhtml/image/totoro.jpg);
+			background-repeat:repeat-x">배경 이미지 가로로 반복
+	</div>
+	<div style="width:250px; height:250px; background-image:url(/myhtml/image/javaline2_131-33.png);
+			background-repeat:repeat-y">배경 이미지 세로로 반복
+	</div>
+	
+	<!-- CSS 배경 이미지의 위치 : background-position -->
+	<table width="90%" cellpadding="0" cellspacing="0" border="1" align="center"
+		style="background-image:url(/myhtml/image/totoro.jpg); background-repeat:no-repeat;
+		background-position:center right">
+		<tr height="100px">
+			<td width="30%">top left</td>
+			<td width="30%">top center</td>
+			<td width="30%">top right</td>
+		</tr>
+		<tr height="100px">
+			<td>center left</td>
+			<td>center center</td>
+			<td>center right</td>
+		</tr>
+		<tr height="100px">
+			<td>bottom left</td>
+			<td>bottom center</td>
+			<td>bottom right</td>
+		</tr>
+	</table>	
+</body>
+</html>
