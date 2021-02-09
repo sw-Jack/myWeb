@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- page-break-before : 인쇄 시 다음 페이지로 넘길 수 있는 속성 -->
+	<!-- page-break-before 해당 속성이 명시된 부분 기준으로 페이징 -->
+		<!-- auto : 기본값 -->
+		<!-- always : 항상 페이지 넘김 -->
+		<!-- avoid : 페이지 넘김을 못하도록 강제-->
+		<!-- left : 제본을 위한 값이라고 하나 always와 거의 다를 바가 없음-->
+		<!-- right : 제본을 위한 값이라고 하나 always와 거의 다를 바가 없음- -->
+
+	<p style="text-indent:10px">자바 라인은 자바 관련 프로그램 제작 가이드라는 부제를 달고 있는 만큼 홈페이지
+	제작에 필요한 다양하고 유익한 정보를 제공하겠습니다.</p>
+	<p style="text-indent:10px; page-break-before:always;">자바 라인은 홈페이지 제작의 가장 기본이라고 
+	할 수 있는 HTML부터 자바 웹 프로그램 노하우까지 홈페이지에 관한 전반적인 정보를 제공하고 있습니다.</p>
+	
+	<!-- ime-mode 입력 폼의 한영 전환 지정하기 -->
+	<!-- ime-mode 속성은 IME(Input Method Editor)의 상태를 반환하거나 설정함 -->
+		<!-- auto : 기본 값으로 ime-mode 값이 지정되지 않은 상태 -->
+		<!-- active : 활성화된 상태로 초기값이 한글로 지정 -->
+		<!-- inactive : 비활성화 상태로 초기값이 영문으로 지정-->
+		<!-- disabled : 사용할 수 없는 상태로 한영 전환없이 영문만 사용가능 -->
+	<!-- active -->
+	<input type="text" style="ime-mode:active">
+	<!-- inactive -->
+	<input type="text" style="ime-mode:inactive">
+	<!-- disabled -->
+	<input type="text" style="ime-mode:disabled">
+	
+	<!-- CSS 포지셔닝(Positioning) -->
+		<!-- bottom : 위치된 요소의 아래 쪽 간격을 지정-->
+		<!-- clip : 넘쳐흐른 요소의 잘려져 보이는 영역을 지정, 영역에 포함되지 않은 부분은 숨겨짐-->
+		<!-- left : 위치된 요소의 왼쪽 간격을 지정-->
+		<!-- overflow : 넘쳐흐른 요소를 보일지, 감출지, 스크롤할지 지정-->
+		<!-- position : 요소가 위치할 방식을 지정-->
+		<!-- right : 위치된 요소의 오른쪽 간격을 지정-->
+		<!-- top : 위치된 요소의 위쪽 간격을 지정-->
+		<!-- vertical-align : 요소의 수직 정렬을 지정-->
+		<!-- z-index 위치된 요소의 z축 순서를 지정-->
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
