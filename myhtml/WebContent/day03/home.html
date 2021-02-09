@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>페이지 레이아웃 연습</title>
+<link rel="stylesheet" type="text/css" href="/myhtml/css/default.css">
+<script type="text/javascript" src="/myhtml/js/script.js"></script>
+</head>
+<body>
+	<div id="wrap">
+		<!-- 헤더 파일 들어가는 곳 -->
+		<header>
+			<div id="login"><a href="#">Login</a> | <a href="#">Join</a></div> 
+			<div class="clear"></div>
+			<div id="logo"><img alt="JavaLine Web" src="/myhtml/image/logo.png"></div>
+			<nav id="top_menu">
+				<ul>
+					<li><a href="#">HOME</a></li>
+					<li><a href="#">who</a></li>
+					<li><a href="#">Member</a></li>
+					<li><a href="#">Board</a></li>
+					<li><a href="#">Ajax Board</a></li>
+				</ul>
+			</nav>
+		</header>
+		
+		<!-- 배너같은 그림 파일 -->
+		<div class="clear"></div>
+		<div id="sub_img"></div>
+		
+		<!-- 왼쪽 메뉴가 들어가는 곳 -->
+		<nav id="sub_menu">
+			<ul>
+				<li><a href="#">Login</a></li>
+				<li><a href="#">Join Us</a></li>
+				<li><a href="#">Board</a></li>
+				<li><a href="#">Ajax Board</a></li>
+			</ul>
+		</nav>
+		
+		<!-- 실제 컨텐츠가 들어가는 곳 -->
+		<article id="contents">
+			<h1>My Board</h1>
+			<input type="button" value="write" class="btn"/>
+			<table id="board">
+				<tr>
+					<th class="tno">No.</th>
+					<th class="twriter">Writer</th>
+					<th class="ttitle">Title</th>
+					<th class="tread">Read</th>
+					<th class="tdate">Date</th>			
+				</tr>
+				<tr>
+					<td>21</td>
+					<td>LJW</td>
+					<td class="left">who are you?</td>
+					<td>29</td>
+					<td>2021/02/09</td>
+				</tr>
+			</table>
+			<form action="#" method="post" name="find_frm" onsubmit="return check()">
+				<div id="table_search">
+					<select class="select_box" name="find" size="1">
+						<option value="writer">이름</option>
+						<option value="subject">제목</option>
+						<option value="content">내용</option>
+					</select>
+					<input type="text" class="input_box" name="find_box"/>
+					<input type="submit" value="search" class="btn"/>
+				</div>
+			</form>
+			<div class="clear"></div>
+			<div id="page_control">
+				<a href="#">Prev</a><a href="#">1</a><a href="#">2</a>
+				<a href="#">3</a><a href="#">4</a><a href="#">5</a>
+				<a href="#">6</a><a href="#">7</a><a href="#">8</a>
+				<a href="#">9</a><a href="#">10</a><a href="#">Next</a>
+			</div>	
+		</article>
+		
+		<!-- footer가 들어가는 곳 -->
+		<div class="clear"></div>
+		<footer>
+			<hr>
+			<div id="copy">
+				All contents copyright 2021 LJW all rights reserved<br>
+				Contact e-mail : XXXX@gmail.com TEL : 010-2222-2222
+			</div>
+			<div id="social">
+				<img alt="Facebook" src="/myhtml/image/facebook.gif">
+				<img alt="Twitter" src="/myhtml/image/twitter.gif">
+			</div>
+		</footer>
+	</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
