@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+		today = new Date();
+		weekday = today.getDay(); 
+		document.write(today.toLocaleDateString() + "<br>");
+		document.write(today.toLocaleTimeString() + "<br>");
+		document.write(today.toLocaleString() + "<br>");
+		document.write(today.toLocaleString('en-US') + "<br>");
+
+		switch(weekday) {
+		
+			case 0 : 
+				document.write("오늘은 일요일입니다.<br>좋은 휴일 보내세요!^^");
+				break;
+			case 1 : 
+				document.write("오늘은 월요일입니다ㅣ.<br>좋은 휴일 보내세요!^^");
+				break;
+			case 2 : 
+				document.write("오늘은 화요일입니다.<br>좋은 휴일 보내세요!^^");
+				break;
+			case 3 : 
+				document.write("오늘은 수요일입니다.<br>좋은 휴일 보내세요!^^");
+				break;
+			case 4 : 
+				document.write("오늘은 목요일입니다.<br>좋은 휴일 보내세요!^^");
+				break;
+			case 5 : 
+				document.write("오늘은 금요일입니다.<br>좋은 휴일 보내세요!^^");
+				break;
+			default :
+				document.write("오늘은 토요일입니다.<br>좋은 휴일 보내세요!^^");
+				break;
+		}
+		
+	</script>
+</body>
+</html>

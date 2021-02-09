@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body onload="alert('창이 load되면 이 경고창 먼저 뜹니다.')">
+	<input type="button" onclick="document.bgColor='gold'" value="배경색 바꾸기">
+	<input type="button" onclick="alert('버튼을 클릭하였습니다')" value="클릭">
+	<br><br>
+<script type="text/javascript">
+	document.write("<br>안녕하세요?<br>");
+	document.write("제 이름은 \"손흥민\"입니다.<br><br>");
+	var myName = "황희찬", myLeague="Bundes League", myCountry = "South Korea";
+	document.write("나의 이름은 " + myName + "이고, 현재 뛰고 있는 리그는  " 
+			+ myLeague + "이며, " + myCountry + "에서 태어났습니다.<br><br>"); 
+	
+	var a = 2, b = 5;
+	document.write("연산도 자바와 동일 : " + (a>b) + " / " + (a<b));
+</script>	
+</body>
+</html>
