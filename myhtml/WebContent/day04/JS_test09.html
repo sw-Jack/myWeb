@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript Function Practice</title>
+</head>
+<script type="text/javascript">
+function openPage1(URL) {
+	window.open(URL, 'pop', 'width=300, height=300');
+}
+
+var URL, POP, W, H;
+function openPage2(URL, POP, W, H) {
+	window.open(URL, POP, 'width =' + W + ', height = ' + H);
+}
+
+function clickBtn() {
+	var temp = sum();
+	alert(temp);	
+}
+
+function sum() {
+	var a = 1, b = 2, c = 3, d = 4;
+	return a+b+c+d;
+}
+</script>
+<body>
+	<p><a href="#" onClick="openPage1('http://www.naver.com')">네이버 열기</a></p>
+	<p><a href="#" onClick="openPage1('http://www.daum.net')">다음 열기</a></p>
+	<p><a href="#" onClick="openPage1('https://www.w3schools.com/')">w3school 열기</a></p>
+	<br><br>
+	
+	<p><a href="#" onClick="openPage2('https://blog.mybatis.org/','one','400','500')">MyBatis 열기</a></p>
+	<p><a href="#" onClick="openPage2('https://mvnrepository.com/','two','200','200')">MavenRepo 열기</a></p>
+	<p><a href="#" onClick="openPage2('https://www.geeksforgeeks.org/','three','500','100')">GeeksforGeeks 열기</a></p>
+	<br><br>
+	
+	<input type="button" onClick="clickBtn()" value="덧셈의 결과">
+</body>
+</html>

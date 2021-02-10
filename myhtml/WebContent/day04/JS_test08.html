@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript Function Practice</title>
+</head>
+<!-- 함수 정의하기, 사용은 Body에서 -->
+<script type="text/javascript">
+function greetingMessage(name) {
+	document.write(name + "님 안녕하세요!<br>");
+}
+
+function greeting() {
+	alert("여러분~환영합니다!^^");
+}
+
+function clickEvent() {
+	alert("클릭 이벤트 발생");
+}
+</script>
+
+<body onload="greeting()"> <!--페이지 열리면 나오는 greeting() 함수-->
+	<script type="text/javascript">
+		// 정의된 함수 사용하기 
+		greetingMessage("철수");
+		greetingMessage("영희");
+		greetingMessage("James");
+		greetingMessage("David");
+		greetingMessage("Lapa Dula");	
+	</script>
+	<br><br>
+	
+	<p><input type="button" onClick="clickEvent()" value="클릭">
+	<p><a href="#" onmouseover="clickEvent()">마우스를 올려놔 보세요.</a>
+	<p><img src="/myhtml/image/icon1.png" onClick="clickEvent()" alt="클릭해보세요."></p>
+	<br><br>
+	
+	<p><a href="#" onClick="greetingMessage('유재석')">철수님께 인사하기</a></p>
+	<p><a href="#" onClick="greetingMessage('신동엽')">신동엽님께 인사하기</a></p>
+	<p><a href="#" onClick="greetingMessage('강호동')">강호동님께 인사하기</a></p>
+	
+</body>
+</html>
