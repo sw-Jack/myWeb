@@ -31,7 +31,7 @@ header {
 }
 
 .clear {
-   clear: both;
+   clear: both; /* 오른쪽, 왼쪽 모두 취소 (글자와 같은 컨텐츠가 따라 붙이 않도록, 컨텐츠 개행 느낌) */
 }
 
 nav#top_menu {
@@ -122,7 +122,7 @@ footer #social img {
    background-position: top;
 }
 
-#sub_menu {
+nav#sub_menu {
    width: 238px;
    float: left;
    margin: 20px;
@@ -130,15 +130,15 @@ footer #social img {
    font-size: 1em;
 }
 
-#sub_menu ul {
+nav#sub_menu ul {
    margin: 20px 0 0 10px;
    list-style: none;
 }
 
-#sub_menu a {
+nav#sub_menu a {
    text-decoration: none;
    color: #666;
-   display: block;
+   display: block; /* 한 라인에 하나씩 띄우기 */
    height: 15px;
    width: 150px;
    padding: 7px;
@@ -150,7 +150,7 @@ footer #social img {
    background-position: right center;
 }
 
-#sub_menu a:hover {
+nav#sub_menu a:hover {
    background-image: url("/myhtml/image/bullet_orange.gif");
    background-repeat: no-repeat;
    background-position: right center;
