@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript 내장 객체 Practice</title>
+</head>
+<body>
+	<!--Array() 객체 : 자바에서의 배열과 동일하나 차이라고 하면 배열의 크기를 지정하지 않다도 된다는 것-->
+	<!-- 자바에서의 배열보다는  ArrayList()와 더 비슷하다고 보면 됨 -->
+	<script type="text/javascript">
+		//myArray = new Array(10); //배열 크기 지정 객체 생성
+		//myArray = new Array(요소1, 요소2, ..,., 요소n); //배열 요소 열거 객체 생성
+		myArray = new Array(); // 배열 객체 생성
+		myArray[0] = "강아지";
+		myArray[1] = "고양이";
+		myArray[2] = "거북이";
+		myArray[3] = "고슴도치";
+		document.write("첫번째 배열 값은 ===> " + myArray[0] + "입니다.<br>");
+		document.write("두번째 배열 값은 ===> " + myArray[1] + "입니다.<br>");
+		document.write("세번째 배열 값은 ===> " + myArray[2] + "입니다.<br>");
+		document.write("네번째 배열 값은 ===> " + myArray[3] + "입니다.<br><br>");
+	</script>
+	
+	<!-- Array 객체 속성과 메서드 -->
+	<!-- length 속성 : 배열 길이 -->
+	<script type="text/javascript">
+		myArray = new Array("손흥민","황희찬","황의조","이강인");
+		document.write("배열의 개수 : " + myArray.length + "개<br><br>");
+	</script>
+	
+	<!-- join() 메서드  : 괄호 안의 문자로 연결하여 하나의 문자열 만듦 -->
+	<script type="text/javascript">
+		myArray = new Array("손흥민","황희찬","황의조","이강인");
+		document.write("축구선수 join list : " + myArray.join(" and ") + "<br><br>");
+	</script>
+	
+	<!-- reverse() 메서드  : 순서 역순-->
+	<script type="text/javascript">
+		myArray = new Array("손흥민","황희찬","황의조","이강인");
+		document.write("- reverse() 전 배열<br>");
+		document.write("첫번째 배열 값은 ===> " + myArray[0] + "입니다.<br>");
+		document.write("두번째 배열 값은 ===> " + myArray[1] + "입니다.<br>");
+		document.write("세번째 배열 값은 ===> " + myArray[2] + "입니다.<br>");
+		document.write("네번째 배열 값은 ===> " + myArray[3] + "입니다.<br><br>");
+		myArray = myArray.reverse();
+		document.write("- reverse() 후 배열<br>");
+		document.write("첫번째 배열 값은 ===> " + myArray[0] + "입니다.<br>");
+		document.write("두번째 배열 값은 ===> " + myArray[1] + "입니다.<br>");
+		document.write("세번째 배열 값은 ===> " + myArray[2] + "입니다.<br>");
+		document.write("네번째 배열 값은 ===> " + myArray[3] + "입니다.<br><br>");
+	</script>
+	
+	<!-- sort() 메서드  : 정렬 -->
+	<script type="text/javascript">
+		myArray = new Array("이재성","권창훈","손흥민","황희찬","이승우","황의조","이강인","지동원");
+		document.write("- 선발 명단 : " + myArray.join(" and ") + "<br>");
+		myArray = myArray.sort();
+		document.write("- 선발 명단(가나다 순) : " + myArray.join(" and ") + "<br><br>");
+	</script>
+	
+	<!-- slice() 메서드  : 배열 슬라이싱 -->
+	<script type="text/javascript">
+		myArray = new Array("이재성","권창훈","손흥민","황희찬","이승우","황의조","이강인","지동원");
+		document.write("- 기존 명단 : " + myArray.join(" and ") + "<br>");
+		myArray2 = myArray.slice(1,4); // 1~3 : myArray[1], myArray[2], myArray[3]
+		document.write("- slice() 후 명단 : " + myArray2.join(" and ") + "<br><br>");
+	</script>
+	
+	<!-- concat() 메서드  : 두 개의 배열을 하나로 합쳐주는 기능 -->
+	<script type="text/javascript">
+		myArray1 = new Array("이재성","권창훈","손흥민");
+		myArray2 = new Array("Korea","England","Germany");
+		myArray3 = myArray1.concat(myArray2);
+		document.write("- 기존 명단1 : " + myArray1.join(" and ") + "<br>");
+		document.write("- 기존 명단2 : " + myArray2.join(" and ") + "<br>");
+		document.write("- 명단 1과 2 결합시킨 명단 : " + myArray3.join(" and ") + "<br><br>");
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
