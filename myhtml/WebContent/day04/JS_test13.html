@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript 내장 객체 Practice</title>
+</head>
+<body>
+	<!-- Math 객체 : Math.속성 or Math.메서드 -->
+	<script type="text/javascript">
+		message = new Array();
+		message[0] = "아는 길도 물어가라";
+		message[1] = "천리길도 한 걸음부터";
+		message[2] = "세살 버릇 여든간다";
+		message[3] = "낫놓고 기역자도 모른다";
+		message[4] = "바늘 도둑이 소도둑 된다"
+
+		random_msg = Math.floor(Math.random()*5); //0~4 //floor은 내림
+		random_msg = message[random_msg];
+		document.write(random_msg);
+	</script>
+</body>
+</html>
