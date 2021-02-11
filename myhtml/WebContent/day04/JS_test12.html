@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript 내장 객체 Practice</title>
+</head>
+<body>
+	<!-- Date() 객체 : 날짜와 시간을 사용하게 해주는 내장 객체 -->
+	<script type="text/javascript">
+		now = new Date();
+		year = (1900 + now.getYear()); //1900년 부터 셈 시작이므로 1900+
+		month = (now.getMonth() + 1); //0~11월이므로 +1
+		date = now.getDate();
+		hour = now.getHours();
+		min = now.getMinutes();
+		
+		today = "오늘은 " + year + "년 " + month + "월 " + date + "일 입니다.<br>";
+		document.write(today);
+		
+		var ampm
+		if(hour <= 12) {
+			ampm = "오전";
+		} else {
+			ampm = "오후";
+		}
+		now_time = "지금은 " + ampm + " " + hour + "시 " + min + "분 입니다.<br>";
+		document.write(now_time);
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
