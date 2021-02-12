@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript 브라우저 객체 Practice</title>
+</head>
+<script type="text/javascript">
+	function openSiteWithNoOption(URL) { //옵션없이 팝업 윈도우 열기
+		window.open(URL,"");
+	}
+	function openSite(URL) { //옵션을 준 팝업 윈도우 열기
+		window.open(URL,"what's opened","resizable=no, location=yes, width=800, height=800, left=0, top=0");
+	}
+	function fullOpen() { //fullscreen 모드로 열기 
+		window.open("https://mvnrepository.com", "MavenRepo", "fullscreen")
+	}
+	function channelOpen() { //채널 모드로 열기
+		window.open("https://www.w3schools.com", "W3Schools", "channelmode")
+	}
+	function winStatus() { //상태 표시줄
+		window.status = "자바스크립트 정복하기";
+	}
+	function winClose() { //윈도우 닫기 
+		window.close();
+	}
+	function winMoveTo() { //윈도우 창 위치 지정 변경
+		//window.open("http://www.naver.com","", "width=500, height=500");
+		window.moveTo(300,250);
+	}
+	function winMoveTo_00() { //원래 위치로 돌아가기
+		window.moveTo(0,0);
+	}
+	function winMoveBy() {
+		window.moveBy(10,10);
+	}
+	function winMoveBy2() {
+		window.moveBy(-10,-10);
+	}
+	function winScrollBy1() {
+		window.scrollBy(0,50);
+	}
+	function winScrollBy2() {
+		window.scrollBy(0,-50);
+	}
+	function question() {
+		yesorno = confirm('당신은 남자입니까?');
+		if(yesorno == true) 
+			document.write("당신은 <font color=blue>남자</font>입니다.")
+		else
+			document.write("당신은 <font color=red>여자</font>입니다.")
+	}
+	function winPrint() { //화면 인쇄
+		window.print();
+	}
+	function timer() {
+		setTimeout("alert('3초가 지났네요. 안녕하세요!!')", 3000);
+	}
+	function digitalTimer() {
+		var now = new Date();
+		var H = now.getHours();
+		var M = now.getMinutes();
+		var S = now.getSeconds();
+		myForm.myText.value = "현재 시각 : " + H + "시 " + M + "분 " + S + "초";
+		setTimeout("digitalTimer()", 1000);
+	}
+</script>
+<body>
+	<!-- Window 객체 : 자바 스크립트 계층 구조 중 최상위 객체(대부분의 경우 선언이 생략될 뿐) -->
+	<!-- window.open() => window.open("팝업창으로 보여줄 문서", "팝업창의 이름", "옵션") -->
+	<input type="button" onClick="openSiteWithNoOption('http://kgitbank.co.kr')" value="옵션없는 팝업 윈도우"><br>
+	<input type="button" onClick="openSite('http://www.daum.net')" value="옵션을 준 팝업 윈도우"><br><br>
+	
+	<input type="button" onClick="fullOpen()" value="fullscreen">
+	<p>fullscreen 윈도우를 닫으려면 &ltAlt+F4&gt 키를 누르세요.</p>
+	<input type="button" onClick="channelOpen()" value="channelmode"><br><br>
+	
+	<!-- window.status : 상태 표시줄에 메시지를 나타냄 -->
+	<a href="http://www.naver.com" onmouseOver="winStatus(); return true;">마우스를 올려놔 보세요...</a>
+	<br><br>
+	
+	<!-- window.close() : 윈도우 닫기 -->
+	<a href="#" onClick="fullOpen()">팝업창 열기</a>
+	<a href="#" onClick="winClose()">팝업창 닫기</a>
+	<br><br>
+	
+	<!-- window.moveTo(x,y) : 괄호 안의 지정된 위치(x,y)로 윈도우의 위치를 이동시켜주는 메서드 -->
+	<p><input type="button" onClick="winMoveTo()" value="이동하기">
+	<p><input type="button" onClick="winMoveTo_00()" value="원래대로 돌아가기">
+	<p><input type="button" onClick="window.moveTo(400,400)" value="이동하기">
+	<br><br>
+	
+	<!-- window.moveBy(x,y) : 괄호 안의 지정된 픽셀 수 만큼 윈도우의 위치를 이동시켜주는 메서드 -->
+	<p><input type="button" onClick="winMoveBy()" value="남동쪽으로 이동">
+	<p><input type="button" onClick="winMoveBy2()" value="북서쪽으로 이동">
+	<p><input type="button" onClick="window.moveBy(-10,-10)" value="남동쪽으로 이동하기">
+	<br><br>
+
+	<!-- window.scrollBy() : 괄호 안에서 지정된 크기만큼 문서의 내용을 스크롤 시켜주는 메서드 -->	
+	<p><img src="/myhtml/image/facebook.gif">
+	<p><input type="button" onClick="winScrollBy1()" value="아래로 스크롤">
+	<p><input type="button" onClick="winScrollBy2()" value="위로 스크롤">
+	<p><img src="/myhtml/image/twitter.gif">
+	<br><br>
+	
+	<!-- window.alert() : 경고창 -->
+	<input type="button" onClick="alert('경고합니다!')" value="경고">	
+	<br><br>
+	
+	<!-- window.confirm() : 확인 상자 -->
+	<input type="button" onClick="question()" value="질문">	
+	<br><br>
+
+	<!-- window.prompt() : 원하는 데이터를 입력할 수 있게 해주는 함수 -->
+	<!-- 형식 : prompt("메세지","디폴트값") -->
+	<script type="text/javascript">
+		name = prompt("이름을 적어주세요.", "name");
+		document.write("<font color=green>" + name + "</font>님 환영합니다^^");
+	</script>
+	
+	<!-- window.print() : 화면 인쇄 -->
+	<p><input type="button" onClick="winPrint()" value="인쇄하기"> 
+	<p><input type="button" onClick="window.print()" value="인쇄하기">
+	<br><br>
+	
+	<!-- window.blur() & window.focus() : 현재 창에 포커스를 주거나 해제하는 기능 -->
+	<script type="text/javascript">
+		myWin = window.open("http://www.naver.com","newPage","width=500, height=500");
+	</script>
+	<input type="button" onClick="myWin.focus()" value="Focus On">
+	<input type="button" onClick="myWin.blur()" value="Focus Off">
+	<input type="button" onClick="myWin.close()" value="Close">
+	<br><br>
+	
+	<!-- setTimeout() 메서드 : 지정된 시간 후 특정 코드를 실행시켜주는 메서드 -->
+	<!-- 형식 : setTime(code,delay) ==> code : 실행 코드 / delay : 실행까지의 시간 -->
+	<input type="button" onclick="timer()" value="3초후 인사">
+	<br><br>
+	<!-- setTimeout()을 이용하여 입력 상자에 실시간으로 작동하는 디지털 시계 나타내기 -->
+	<form name="myForm">
+		<input type="text" name="myText" style="text-align: center">
+	</form>
+	<script type="text/javascript">
+		//초기에 문서에 write 해주고 그 이후엔 함수 이용해서 1초씩 증가하는 시계 생성
+		document.onLoad(setTimeout("digitalTimer()", 1000)); 
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

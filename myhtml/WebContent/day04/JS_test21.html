@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript 브라우저 객체 Practice</title>
+</head>
+<script type="text/javascript">
+	function myEvent() {
+		if(event.altKey) {
+			alert("ALT 키를 누르셨군요!");
+		}
+		else if(event.ctrlKey) {
+			alert("CTRL 키를 누르셨군요!");
+		}
+		else if(event.shiftKey) {
+			alert("SHIFT 키를 누르셨군요!");
+		}
+		else {
+			alert("다른 키를 누르셨군요!");
+		}		
+	}
+	document.onkeydown = myEvent;
+</script>
+<body>
+	<!-- 이벤트 객체 -->
+	<!-- event.type 프로퍼티 -->
+	<a href="#" onClick="alert('이벤트 타입은 : ' + event.type)">Click</a>
+	<a href="#" onMouseOver="alert('이벤트 타입은 : ' + event.type)">MouseOver</a>
+	<a href="#" onMouseOut="alert('이벤트 타입은 : ' + event.type)">MouseOut</a>
+	<a href="#" onMouseUp="alert('이벤트 타입은 : ' + event.type)">MouseUp</a>
+	<a href="#" onMouseDown="alert('이벤트 타입은 : ' + event.type)">MouseDown</a>
+	<br><br>
+	
+	<!-- event.altKey, event.shiftKey, event.ctrlKey 프로퍼티 -->
+	<b>CTRL, ALT, SHIFT 키 등을 눌러보세요.</b><br>
+</body>
+</html>

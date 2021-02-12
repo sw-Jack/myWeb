@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript 브라우저 객체 Practice</title>
+</head>
+<script type="text/javascript">
+	function myFunc() {
+		setInterval("alert('안녕하세요')", 1000);
+	}
+</script>
+<script type="text/javascript">
+	var $count = 0;
+	var $message = " ";
+	for(i=0; i<50; i++) {
+		$message += " ";
+	}
+	$message += "자바스크립트를 정복하자";
+	$message += "즐거운 시간 되시길";
+	
+	function myScroll() {
+		window.status = $message.substring($count, $count+150);
+	}
+	$count++;
+	if($count > $message.length) {
+		$count = 0;
+	}
+	document.onload = setInterval("myScroll()", 50);
+</script>
+<body>
+	<!-- setInterval() 메서드 : 지정된 시간 후 특정 자바스크립트 코드가 포함된 문자열을 반복 호출 -->
+	<input type="button" onclick="myFunc()" value="1초 간격으로 경고창 무한 생성">
+	<br><br>
+
+	<h3 align="center">아래 상태 표시줄을  보세요</h3>
+	
+</body>
+</html>

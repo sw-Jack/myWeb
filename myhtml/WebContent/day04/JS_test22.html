@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript 브라우저 객체 Practice</title>
+</head>
+<script type="text/javascript">
+	function myEvent() {
+		alert(event.button + "번 버튼을 클릭하셨습니다.")
+	}
+	document.onmousedown = myEvent;
+</script>
+<body>
+	<!-- event.button, which 프로퍼티 -->
+	<!-- event.button 프로퍼티 : 사용자가 어떤 마우스 버튼을 클릭했는지 체크하여 숫자로 반환
+	<!-- 마우스 버튼 종류 => (0:없음 / 1:왼쪽 / 2:오른쪽 / 3:왼쪽+오른쪽 / 4:중각 / 5:왼쪽+중간 / 6:오른쪽+중간 / 7:왼쪽+오른쪽+중간 -->
+	<!-- navigator에서는 event.which 프로퍼티를 사용 -->
+	<b>마우스의 왼쪽, 오른쪽, 가운데 등 버튼을 클릭해보세요.</b>
+</body>
+</html>

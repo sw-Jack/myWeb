@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript 브라우저 객체 Practice</title>
+</head>
+<body>
+	<!-- History 객체 : 사용자 브라우저가 이전에 방문했던 URL을 지정하는 문자열들로 이루어지는 읽기 전용 배열 -->
+	<script type="text/javascript">
+		document.write("이전 방문 페이지 개수 : " + window.history.length + "개<br>");
+		document.write("현재 문서의 URL : " + window.history.current + "<br>");
+		document.write("다음 문서의 URL : " + window.history.next + "<br>");
+		document.write("이전 문서의 URL : " + window.history.previous + "<br>");
+	</script>
+	
+	<input type="button" onClick="history.back()" value="뒤로 가기">
+	<input type="button" onClick="history.forward()" value="앞으로 가기">
+	<input type="button" onClick="history.go(2)" value="2단계  앞으로 가기">
+	<br><br>
+	
+	
+	<!-- Location 객체 : 브라우저의 주소를 표현하고 제어 -->
+	<!-- 사용 형식 : location.프로퍼티(메서드) or window.location.프로퍼티(메서드) -->
+	<script type="text/javascript">
+		//location.replace("http://www.naver.com"); //해당 HTML 문서를 실행하면 해당 페이지로 일단 load 되었다가 괄호 안의 URL로 다시 load됨
+	</script>
+	<input type="button" onClick="location.reload()" value="새로고침">
+</body>
+</html>

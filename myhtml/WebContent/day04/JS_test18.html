@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript 브라우저 객체 Practice</title>
+</head>
+<body>
+	<!-- Navigator 객체 : 객체 하나로 사용자의 웹 브라우저 종류와 자바 사용이 가능한 브라우저인지 여부를 판별-->
+	<script type="text/javascript">
+		document.write("navigator.appCodeName ==> " + navigator.appCodeName + "<br>");
+		document.write("navigator.appName ==> " + navigator.appName + "<br>");
+		document.write("navigator.appVersion ==> " + navigator.appVersion + "<br>");
+		document.write("navigator.userAgent ==> " + navigator.userAgent + "<br>");
+		document.write("navigator.platform ==> " + navigator.platform + "<br>");
+		document.write("사용중인 언어 ==> " + navigator.language + "<br>");
+		document.write("Mime Type의 개수 ==> " + navigator.mimeTypes.length + "<br>");
+		document.write("설치된 플러그인의 개수 ==> " + navigator.plugins.length + "<br>");
+		if(navigator.javaEnabled == true) {
+			document.write("자바 사용이 가능한 브라우저입니다.<br>");
+		} else {
+			document.write("자바 사용이 불가능한 브라우저입니다.");
+		}
+	</script>
+	
+</body>
+</html>

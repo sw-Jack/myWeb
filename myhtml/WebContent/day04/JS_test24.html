@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript 브라우저 객체 Practice</title>
+</head>
+<!-- Document 객체 -->
+<!-- document.write() / document.writeln() 메서드 -->
+<script type="text/javascript">
+	function myFunc() {
+		myWin = window.open("","popwin","width=400, height=300");
+		myWin.document.write("<HTML><HEAD><TITLE>SAMPLE</TITLE></HEAD>");
+		myWin.document.write("<BODY bgColor='gold'>");
+		myWin.document.write("<p align=center><b>안녕하세요</b></p>");
+		myWin.document.write("</BODY></HTML>");
+		myWin.document.close();
+	}
+</script>
+<body>
+	<input type="button" onClick="myFunc()" value="새창 열기">
+</body>
+</html>

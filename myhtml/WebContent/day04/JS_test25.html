@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript 브라우저 객체 Practice</title>
+</head>
+<script type="text/javascript">
+	function myFunc() {
+		document.fgColor = "white";
+		document.linkColor = "yellow";
+		document.vlinkColor = "silver";
+		document.alinkColor = "red";
+		document.bgColor = "black";
+		
+	}
+</script>
+<body bgcolor="##FFCCC66" text="#000000" link="red" vlink="#009933" alink="blue">
+	<!-- 문서의 정보를 나타내는 속성들 -->
+	<script type="text/javascript">
+		document.write("쿠키 정보 : " + document.cookie + "<br>");
+		document.write("문서의 수정 일자 : " + document.lastModified + "<br>");
+		document.write("이전페이지 : " + document.referrer + "<br>");
+		document.write("문서의 제목 : " + document.title + "<br>");
+		document.write("문서의 URL : " + document.URL + "<br>");
+	</script>
+	
+	<!-- 문서의 배경과 텍스트 색상을 나타내는 속성들 -->
+	<script type="text/javascript">
+		document.write("링크 텍스트 색상 : " + document.linkColor + "<br>");
+		document.write("방문했던 링크 텍스트 색상 : " + document.vlinkColor + "<br>");
+		document.write("클릭시 링크 텍스트 색상 : " + document.alinkColor + "<br>");
+		document.write("텍스트 색상 : " + document.fgColor + "<br>");
+		document.write("배경 색상 : " + document.bgColor + "<br>");
+	</script>
+	<p>
+	<a href="http:///www.naver.com">네이버</a>
+	<a href="http:///www.daum.net">다음</a>
+	<a href="http:///www.kgitbank.co.kr">아이티뱅크</a>
+	</p>
+	<p><input type="button"	onClick="myFunc()" value="바꾸기">
+</body>
+</html>
