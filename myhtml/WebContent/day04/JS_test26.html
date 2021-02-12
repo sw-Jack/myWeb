@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript 브라우저 객체 Practice</title>
+</head>
+<script type="text/javascript">
+	function setCookie() {
+		cookieName = "test"; //쿠키 이름을 test로 설정
+		document.cookie = "cookieName = " + cookieName;
+	}
+	setCookie(); //쿠키 생성
+</script>
+<body>
+	<!-- Cookie -->
+	<!-- *cookie는 이름이 지정된 아주 적은 양의 데이터로서, 사용자의 웹 브라우저에 저장되며,
+		    특정한 웹 사이트나 웹 페이지와 결합되어 사용됨 
+		 *쿠키의 역할은 어떤 페이지에서 입력되었던 데이터를 다른 페이지에서도 사용될 수 있도록 
+		    웹 브라우저에 기억 장소를 제공하거나 사용자가 페이지를 떠났다가 다시 방문하게 되었을 때
+		    다시 호출하여 사용될 수 있도록 하기 위한 기억 장소를 제공하는 것-->
+	<!-- cookie 속성 -->
+	<!-- 1.name : 값 
+		 2.expires : 쿠키 사용할 기간
+		 3.path : 쿠키를 사용할 웹 페이지
+		 4.domain : 쿠키를 사용할 도메인
+		 5.secure : 브라우저와서버가 HTTPS 또는 다른 보안 프로토콜을 통해 연결될 때에만 전송 -->
+	<script type="text/javascript">
+		if(document.cookie != "") { //쿠키가 있다면
+			document.write("<p>쿠키의 이름은 ");
+			document.write("<font color=red>" + cookieName + "</font>"); //쿠키 이름 출력
+		} else { //쿠키가 없다면
+			document.write("<h3>쿠키가 없습니다.</h3>")
+		}
+	</script>
+</body>
+</html>
