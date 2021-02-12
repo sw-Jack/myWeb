@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript Cookie 실습 예제 : 쿠키에 만기일 넣어서 굽고 버리기</title>
+</head>
+<style>
+body {font-size:12px}
+</style>
+<script type="text/javascript">
+expireDate = new Date(); //현재 날짜를 구해 expireDate라는 만기일 변수에 저장
+expireDate.setMonth(expireDate.getMonth() + 6); //쿠키 지속 기간 6개월 설정
+cookieName = "";
+if(document.cookie != "") { //쿠키가 있다면 
+	//쿠키 이름을 '=' 구분자로 분리한 후, 두번째 배열값을 cookieName 변수에 할당
+	cookieName = document.cookie.split("=")[1]
+}
+//쿠키 만들기 함수
+function setCookie() {
+	cookieName = "test";
+	// expire은 유효기간 형태로 저장하는데 이 때 반드시 toGMTString() 형태로 변환해야 함
+	document.cookie = "cookieName = " + cookieName + "; expires = " + expireDate.toGMTString();
+}
+//쿠키 버리기 함수
+function deleteCookie() {
+	if(document.cookie != "") { //쿠키가 있다면 
+		thisCookie = document.cookie.split("; "); //쿠키값을 "; "로 분리하고
+		expireDate = new Date(); //새로운 expireDate 객체를 생성하고
+		//유효 기간의 날짜를 오늘보다 하루 적게 설정
+		expireDate.setDate(expireDate.getDate() - 1);
+		for(i=0; i<thisCookie.length; i++) { //쿠키가 발견될 때까지 찾아서
+			//쿠키를 "="로 분리한 후 두번째 항목을 cookiName 변수에 할당하고 
+			cookieName = thisCookie[i].split("=")[1]
+			//쿠키명과 새로 설정한 expireDte 값으로 쿠키를 다시 설정
+			document.cookie = "cookieName = " + cookieName + "; expires = " + expireDate.toGMTString();			
+		}
+	}
+}
+</script>
+<body>
+	<script type="text/javascript">
+		if(document.cookie != "") { //쿠키가 있다면}
+			document.write("<h3>쿠키가 있습니다.</h3>");
+			document.write("<p>쿠키의 이름은 ");
+			document.write("<font color=red>" + cookieName + "</font>");
+			document.write("<p>쿠키의 만기일은 ");
+			document.write("<font color=blue>" + expireDate.toGMTString() + "</font>");
+		} else { //쿠키가 없다면
+			document.write("<h3>쿠키가 없습니다.</h3>");
+		}
+	</script>
+	
+	<form>
+		<input type="submit" value="쿠키 굽기" onClick="setCookie()">
+		<input type="submit" value="쿠키 버리기" onClick="deleteCookie()">
+	</form>
+</body>
+</html>
