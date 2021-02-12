@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript 내장 객체 Practice</title>
+</head>
+<body>
+	<!-- Function 객체 -->
+	<!-- 객체 변수 = new Function(매개1, .. 매개n, 처리할 내용)-->
+	<script type="text/javascript">
+		result = new Function('a','b','c','d', "return a*b*c*d");
+		document.write("5*6*7*8 ==> " + result(5,6,7,8) + "입니다.<br>");
+		document.write("매개변수의 개수 ==> " + result.length + "개<br><br>");
+	</script>
+	
+	<!-- Number 객체 -->
+	<script type="text/javascript">
+		document.write(Number('9090') + "<br>"); //따로 객체 선언하지 않고 사용 가능
+		x = 12;
+		document.write(x.toString(2) + "<br>"); //x를 2진수로 
+		document.write(x.toString(16) + "<br><br>"); //x를 2진수로 
+	</script>
+	
+	<!-- 사용자 정의 객체 -->
+	<!-- 사용자 정의 객체 생성 방법 : 생성자 함수 & new 연산자(객체 생성) -->
+	<!-- 생성자 함수 : 객체가 정의될 때 자동적으로 호출 -->
+	<script type="text/javascript">
+		//1. 기본 생성자 방식
+		function myFunc() {
+			this.name; this.id; this.addr; this.hobby;
+		}
+		myObj = new myFunc();
+		myObj.name = "손흥민";
+		myObj.id = "Sonny";
+		myObj.addr = "London";
+		myObj.hobby = "soccer";
+		document.write("이름 : " + myObj.name + "<br>");
+		document.write("아이디 : " + myObj.id + "<br>");
+		document.write("주소 : " + myObj.addr + "<br>");
+		document.write("취미 : " + myObj.hobby + "<br><br>");
+		
+		//2. 매개변수를 포함한 생성자 방식
+		function myFunc(a,b,c,d) {
+			this.name = a; this.id = b; this.addr = c; this.hobby = d;
+		}
+		myObj = new myFunc("황의조","Hwang","Bordo","Baseball");
+		document.write("이름 : " + myObj.name + "<br>");
+		document.write("아이디 : " + myObj.id + "<br>");
+		document.write("주소 : " + myObj.addr + "<br>");
+		document.write("취미 : " + myObj.hobby + "<br><br>");
+		
+	</script>
+</body>
+</html>

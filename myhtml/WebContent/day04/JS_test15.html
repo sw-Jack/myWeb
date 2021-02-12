@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript 내장 객체 Practice</title>
+</head>
+<script type="text/javascript">
+// 팝업창을 현재 화면의 한 가운데에 띄우게 하는 함수
+function popWin(mypage, myname, w, h, scroll) {
+	var winW = (screen.width - w) / 2;
+	var winH = (screen.height - h) / 2;
+	winprops = 'height = ' + h + ', width = ' + w + ', top = ' 
+				+ winH + ', left = ' + winW + ', scrollbars = '
+				+ scroll + ', resizable';
+	win = window.open(mypage, myname, winprops);
+}
+</script>
+<body>
+	<!-- Screen 객체 : 화면의 해상도나 색상, 크기 등에 관한 정보를 제공해주는 객체 -->
+	<!-- new 연산자를 사용하지 않고 객체를 직접 사용하여 속성에 접근 -->
+	<script type="text/javascript">
+		document.write("screen.height ==> " + screen.height + "<br>");
+		document.write("screen.width ==> " + screen.width + "<br>");
+		document.write("screen.availHeight ==> " + screen.availHeight + "<br>");
+		document.write("screen.availWidth ==> " + screen.availWidth + "<br>");
+		document.write("screen.pixelDepth ==> " + screen.pixelDepth + "<br>");
+		document.write("screen.colorDepth ==> " + screen.colorDepth + "<br><br>");
+	</script>
+	
+	
+	<!-- 팝업 윈도우를 항상 화면의 가운데에 나타나게 하는 예제  -->
+	<!-- 위의 popWin() 함수 사용 -->
+	<a href="#" onClick="popWin('http://www.naver.com','name','400','400','yes')">NAVER</a>
+</body>
+</html>

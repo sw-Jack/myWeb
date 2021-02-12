@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScript 내장 객체 Practice</title>
+</head>
+<body>
+	<!-- 객체 제어 명령문 -->
+	<!-- 객체를 제어하기 위한 명령 : for~in 명령문 & with 명령문 -->
+	<!-- for~in 명령문 : for(변수명 in 객체변수) { ... } -->
+	<script type="text/javascript">
+		//document 객체의 모든 속성을 반복 실행하여 보여주는 에제
+		for(var test in document) {
+			document.write("<font color=blue>" + test + "</font> : "
+							+ document[test] + "<br>");
+		}
+		document.write("<br>");
+		// 사용자 정의 객체를 만들어 for~in 명령을 내려보는 예제
+		function prof(a,b,c) {
+			this.name = a;
+			this.age = b;
+			this.sex = c;
+		}				
+		myProfile = new prof("장동건",49,"male")
+		for(p in myProfile) {
+			document.write(p + " : " + myProfile[p] + "<br>");
+		}
+		document.write("<br>");
+	</script>
+		
+	<!-- with 명령문 : with(반복시킬 객체) { ... } -->
+	<script type="text/javascript">
+			with(document) {
+				write("with 명령문을 사용하면<br>")
+				write("document와 같은 특정 객체를<br>")
+				write("여러번 사용하지 않고도<br>")
+				write("편리하게 사용할 수 있습니다.<br>")
+				
+			}
+	</script>
+</body>
+</html>
