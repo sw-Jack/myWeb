@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
+// 방명록 리스트 서블릿
 public class VisitList extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
