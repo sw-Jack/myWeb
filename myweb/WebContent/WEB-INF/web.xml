@@ -12,6 +12,16 @@
 		<welcome-file>default.htm</welcome-file>
 		<welcome-file>default.jsp</welcome-file>
 	</welcome-file-list>
+	
+	<context-param>
+		<param-name>company</param-name>
+		<param-value>KG-ITBank</param-value>
+	</context-param>
+	<context-param>
+		<param-name>manager</param-name>
+		<param-value>Lee</param-value>
+	</context-param>
+
 	<servlet>
 		<servlet-name>MyOne</servlet-name>
 		<servlet-class>sample.MyServlet</servlet-class>
@@ -19,5 +29,77 @@
 	<servlet-mapping>
 		<servlet-name>MyOne</servlet-name>
 		<url-pattern>/MyServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>LifeCycle</servlet-name>
+		<servlet-class>sample.LifeCycle</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LifeCycle</servlet-name>
+		<url-pattern>/LifeCycle</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>InitParam</servlet-name>
+		<servlet-class>sample.InitParam</servlet-class>
+		<init-param>
+			<param-name>tel</param-name>
+			<param-value>010-3333-1111</param-value>
+		</init-param>
+		<init-param>
+			<param-name>email</param-name>
+			<param-value>example@naver.com</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>InitParam</servlet-name>
+		<url-pattern>/InitParam</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>VisitInsert</servlet-name>
+		<servlet-class>bbs.VisitInsert</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>VisitInsert</servlet-name>
+		<url-pattern>/VisitInsert</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>VisitList</servlet-name>
+		<servlet-class>bbs.VisitList</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>VisitList</servlet-name>
+		<url-pattern>/VisitList</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>Login</servlet-name>
+		<servlet-class>login.Login</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Login</servlet-name>
+		<url-pattern>/Login</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>LoginCheck</servlet-name>
+		<servlet-class>login.LoginCheck</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LoginCheck</servlet-name>
+		<url-pattern>/LoginCheck</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>Logout</servlet-name>
+		<servlet-class>login.Logout</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Logout</servlet-name>
+		<url-pattern>/Logout</url-pattern>
 	</servlet-mapping>
 </web-app>
