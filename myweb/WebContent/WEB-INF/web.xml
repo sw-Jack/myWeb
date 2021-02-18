@@ -12,7 +12,8 @@
 		<welcome-file>default.htm</welcome-file>
 		<welcome-file>default.jsp</welcome-file>
 	</welcome-file-list>
-
+	
+	<!-- ServletContext init 파라미터  -->
 	<context-param>
 		<param-name>company</param-name>
 		<param-value>KG-ITBank</param-value>
@@ -22,6 +23,21 @@
 		<param-value>Lee</param-value>
 	</context-param>
 
+	<error-page>
+		<error-code>404</error-code>
+		<location>/error/error404.jsp</location>
+	</error-page>
+	<error-page>
+		<error-code>500</error-code>
+		<location>/error/error500.jsp</location>
+	</error-page>
+	<!-- 예외 종류별 에러 페이지 지정
+	<error-page>
+		<exception-type>java.lang.NullPointerException</exception-type>
+		<location>/error/errorNullPointer.jsp</location>
+	</error-page>
+	-->
+
 	<servlet>
 		<servlet-name>MyOne</servlet-name>
 		<servlet-class>sample.MyServlet</servlet-class>
@@ -30,7 +46,6 @@
 		<servlet-name>MyOne</servlet-name>
 		<url-pattern>/MyServlet</url-pattern>
 	</servlet-mapping>
-
 	<servlet>
 		<servlet-name>LifeCycle</servlet-name>
 		<servlet-class>sample.LifeCycle</servlet-class>
@@ -39,10 +54,10 @@
 		<servlet-name>LifeCycle</servlet-name>
 		<url-pattern>/LifeCycle</url-pattern>
 	</servlet-mapping>
-
 	<servlet>
 		<servlet-name>InitParam</servlet-name>
 		<servlet-class>sample.InitParam</servlet-class>
+		<!-- ServletConfig init 파라미터  -->
 		<init-param>
 			<param-name>tel</param-name>
 			<param-value>010-3333-1111</param-value>
@@ -56,7 +71,6 @@
 		<servlet-name>InitParam</servlet-name>
 		<url-pattern>/InitParam</url-pattern>
 	</servlet-mapping>
-
 	<servlet>
 		<servlet-name>VisitInsert</servlet-name>
 		<servlet-class>bbs.VisitInsert</servlet-class>
@@ -65,7 +79,6 @@
 		<servlet-name>VisitInsert</servlet-name>
 		<url-pattern>/VisitInsert</url-pattern>
 	</servlet-mapping>
-
 	<servlet>
 		<servlet-name>VisitList</servlet-name>
 		<servlet-class>bbs.VisitList</servlet-class>
@@ -74,8 +87,6 @@
 		<servlet-name>VisitList</servlet-name>
 		<url-pattern>/VisitList</url-pattern>
 	</servlet-mapping>
-
-
 	<servlet>
 		<servlet-name>Login</servlet-name>
 		<servlet-class>login.Login</servlet-class>
@@ -84,7 +95,6 @@
 		<servlet-name>Login</servlet-name>
 		<url-pattern>/Login</url-pattern>
 	</servlet-mapping>
-
 	<servlet>
 		<servlet-name>LoginCheck</servlet-name>
 		<servlet-class>login.LoginCheck</servlet-class>
@@ -93,7 +103,6 @@
 		<servlet-name>LoginCheck</servlet-name>
 		<url-pattern>/LoginCheck</url-pattern>
 	</servlet-mapping>
-
 	<servlet>
 		<servlet-name>Logout</servlet-name>
 		<servlet-class>login.Logout</servlet-class>
@@ -102,7 +111,6 @@
 		<servlet-name>Logout</servlet-name>
 		<url-pattern>/Logout</url-pattern>
 	</servlet-mapping>
-
 	<servlet>
 		<servlet-name>Source</servlet-name>
 		<servlet-class>sample.Source</servlet-class>
@@ -111,7 +119,6 @@
 		<servlet-name>Source</servlet-name>
 		<url-pattern>/Source</url-pattern>
 	</servlet-mapping>
-
 	<servlet>
 		<servlet-name>Destination</servlet-name>
 		<servlet-class>sample.Destination</servlet-class>
