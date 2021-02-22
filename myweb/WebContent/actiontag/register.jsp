@@ -22,7 +22,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td width="100">전화</td>
+				<td width="100">전화번호</td>
 				<td width="200">
 					<input type="text" name="phone" size="25"/>
 				</td>
