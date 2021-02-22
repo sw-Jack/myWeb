@@ -23,6 +23,14 @@
 		<param-value>Lee</param-value>
 	</context-param>
 
+	<!-- 자원 참조 : Connection Pool -->
+	<resource-ref>
+		<description>ConnectionPool</description>
+		<res-ref-name>jdbc/myOracle</res-ref-name>
+		<res-type>javax.sql.DataSource</res-type>
+		<res-auth>Container</res-auth>
+	</resource-ref>
+
 	<error-page>
 		<error-code>404</error-code>
 		<location>/error/error404.jsp</location>
