@@ -1,8 +1,8 @@
 package jdbc;
 import java.sql.*;
 import java.util.*;
-import jdbc.tempMemberVO;
 
+// Beans : DAO
 public class tempMemberDAO {
 	private final String JDBC_DRIVER = "oracle.jdbc.driver.OracleDriver";
 	private final String JDBC_URL = "jdbc:oracle:thin:@localhost:1521:xe";
