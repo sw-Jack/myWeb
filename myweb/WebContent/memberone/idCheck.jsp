@@ -21,6 +21,11 @@
 		<%
 			if(isDup) {
 				out.println("는 이미 존재하는 ID입니다.<br><br>");
+		%>
+			<script type="text/javascript">
+			opener.document.regForm.id.value = "";
+			</script>
+		<%
 			} else {
 				out.println("는 사용 가능한 아이디입니다.<br><br>");
 			}
