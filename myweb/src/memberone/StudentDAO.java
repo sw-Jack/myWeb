@@ -122,10 +122,8 @@ public class StudentDAO {
 	// 로그인 체크 메서드 : 로그인 성공 : 1, 비밀번호 오류 : 0, 아이디 없음 : -1 (check 변수)
 	public int loginCheck(String id, String pass) {
 		String dbPass = getPass(id); // DB에 저장되어 있는 비밀번호
-		int check = -1;
-		if(dbPass == null) {
-			check = -1; // 아이디가 존재하지 않는 경우
-		} else {
+		int check = -1; // 아이디가 없는 경우
+		if(dbPass != null) {
 			if(pass.equals(dbPass)) check = 1; // 로그인 성공
 			else check = 0; // 비밀번호 오류
 		}
