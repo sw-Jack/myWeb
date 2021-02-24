@@ -16,7 +16,7 @@
 <body bgcolor="#FFFFCC">
 	<br>
 	<center>
-		<b><%=id %></b>
+		<b>[<%=id %>]</b>
 		<%
 			if(isDup) {
 				out.println("는 이미 존재하는 ID입니다.<br><br>");
