@@ -17,7 +17,7 @@
 	if(check == 1) { // 로그인 성공
 		session.setAttribute("loginId", id);
 		response.sendRedirect("login.jsp"); // 로그인 성공 시 로그인 페이지로 이동
-	} else if(check == 0) { // 아이디는 맞는데 비밀번호 오류인 경우
+	} else if(check == 0) { // 아이디는 있는데 비밀번호 오류인 경우
 %>
 <script type="text/javascript">
 	alert("비밀번호가 일치하지 않습니다.");
