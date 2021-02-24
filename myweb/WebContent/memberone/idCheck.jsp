@@ -1,3 +1,4 @@
+<%@page import="memberone.StudentDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -6,8 +7,8 @@
 <meta charset="UTF-8">
 <title>ID 중복 체크</title>
 </head>
-<jsp:useBean id="dao" class="memberone.StudentDAO"/>
 <%
+	StudentDAO dao = StudentDAO.getInstance();
 	String id = request.getParameter("id");
 	boolean isDup = dao.idCheck(id);
 %>
