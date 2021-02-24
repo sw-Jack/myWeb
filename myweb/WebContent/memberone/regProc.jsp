@@ -1,10 +1,12 @@
+<%@page import="memberone.StudentDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <% request.setCharacterEncoding("utf-8"); %>
-<jsp:useBean id="dao" class="memberone.StudentDAO"/>
-<jsp:useBean id="vo" class="memberone.StudentVO"/>
-<jsp:setProperty name="vo" property="*"/>
+<jsp:useBean id="vo" class="memberone.StudentVO">
+	<jsp:setProperty name="vo" property="*"/>
+</jsp:useBean> 
 <%
+	StudentDAO dao = StudentDAO.getInstance();
 	boolean flag = dao.memberInsert(vo);
 %>
 <!DOCTYPE html>
