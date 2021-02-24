@@ -66,8 +66,9 @@
 			</tr>
 			<tr>
 				<td colspan="2" align="center">
-				<input type="button" value="회원가입" onClick="inputCheck()"/>&nbsp;&nbsp;
-				<input type="reset" value="다시입력"/>
+				<input type="button" value="회원가입" onClick="inputCheck()"/>&nbsp;
+				<input type="reset" value="다시입력"/>&nbsp;
+				<input type="button" value="취소" onClick="javascript:window.location='login.jsp'"/>
 				</td>
 			</tr>
 		</table>
