@@ -48,7 +48,8 @@ public class StudentDAO {
 		try {
 			conn = getConnection();
 			String strQuery = "insert into student values(?,?,?,?,?,?,?,?,?,?)";
-			pstmt.setString(1,vo.getId());
+			pstmt = conn.prepareStatement(strQuery);
+			pstmt.setString(1, vo.getId());
 			pstmt.setString(2, vo.getPass());
 			pstmt.setString(3, vo.getName());
 			pstmt.setString(4, vo.getPhone1());
