@@ -6,9 +6,9 @@
 <jsp:useBean id="dao" class="memberone.ZipCodeDAO"/>
 <%
 	request.setCharacterEncoding("UTF-8");
-	String check = request.getParameter("check");
+	String check = request.getParameter("check"); // script.js의 zipCheck() 함수가 zipCheck.jsp?check=y 로 check 값 전달
 	String dong = request.getParameter("dong");
-	Vector<ZipCodeVO> zipcodeList = dao.zipcodeRead(dong);
+	Vector<ZipCodeVO> zipcodeList = dao.zipcodeRead(dong); // 입력한 동이름(dong)으로 주소 데이터베이스에 있는 해당 값 리스트로 추출
 	int totalList = zipcodeList.size();
 %>
 <html>
@@ -20,8 +20,8 @@
 <script type="text/javascript">
 	function sendAddress(zipcode, sido, gugun, dong, ri, bunji) {
 		var address = sido + " " + gugun + " " + dong + " " + ri + " " + bunji;
-		opener.document.regForm.zipcode.value = zipcode;
-		opener.document.regForm.address1.value =  address;
+		opener.document.regForm.zipcode.value = zipcode; // 회원가입 창의 zipcode에는 주소 검색창에서 선택한zipcode
+		opener.document.regForm.address1.value = address; // 회원가입 창의 address1에는 주소 검색창에서 선택한 address(주소)
 		self.close(); // 현재 창 (우편번호 검색 창) 닫기 
 	}
 </script>
@@ -37,11 +37,14 @@
 					</td>
 				</tr>
 			</table>
-			<input type="hidden" name="check" value="n">
+			<input type="hidden" name="check" value="n"> <!-- submit 할 때 check 값이 파라미터 값으로 함께 넘어감 -->
 		</form>
 		<table>
+		<%
+		if(check.equals("n")) {
+		%>
 			<%
-				if(check.equals("n")) {
+				if(zipcodeList.isEmpty()) {
 			%>
 			<tr>
 				<td align="center"><br>검색된 결과가 없습니다.</td>
@@ -65,12 +68,15 @@
 			%>
 			<tr>
 				<td>
-					<a href="javascript:sendAddress('<%=tempZipcode %>','<%=tempSido %>','<%=tempGugun %>','<%=tempDong %>','<%=tempRi %>','<%=tempBunji %>'")>
+					<a href="javascript:sendAddress('<%=tempZipcode %>','<%=tempSido %>','<%=tempGugun %>','<%=tempDong %>','<%=tempRi %>','<%=tempBunji %>')")>
 					<%=tempZipcode %>&nbsp;<%=tempSido %>&nbsp;<%=tempGugun %>&nbsp;<%=tempDong %>&nbsp;<%=tempRi %>&nbsp;<%=tempBunji %></a><br>
 			<%
 				} //end for
 			} //end else
 			%>	
+		<%
+		} //end if
+		%>
 				</td>
 			</tr>
 			<tr>
