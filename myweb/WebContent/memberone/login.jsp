@@ -44,7 +44,7 @@
 			</tr>
 			<tr>
 				<td colspan="2" align="center">
-					<input type="submit" value="로그인"/>&nbsp;
+					<input type="submit" value="로그인"/>&nbsp;&nbsp;
 					<input type="button" value="회원가입" onClick="javascript:window.location='regForm.jsp'"/>
 				</td>
 			</tr>
