@@ -28,7 +28,7 @@ desc student;
 desc zipcode;
 select * from zipcode where dong like 'µµ°î1%';
 
-
+select * from student;
 
 
 
