@@ -1,3 +1,4 @@
+// 회원관리 자바스크립트 함수
 // 아이디 중복 체크
 function idCheck(id) {
 	if(id == "") {
