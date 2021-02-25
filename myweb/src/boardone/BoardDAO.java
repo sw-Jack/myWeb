@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 // 싱글톤 패턴 적용
@@ -107,24 +108,28 @@ public class BoardDAO {
 		try {
 			conn = ConnUtil.getConnection();
 			//수정2
-			pstmt = conn.prepareStatement("select * from board order by num des"); // 수정 3
+			pstmt = conn.prepareStatement("select * from board order by num desc"); // 수정 3
 			rs = pstmt.executeQuery();
-			do {
-				BoardVO article = new BoardVO();
-				article.setNum(rs.getInt("num"));
-				article.setWriter(rs.getString("writer"));
-				article.setEmail(rs.getString("email"));
-				article.setSubject(rs.getString("subject"));
-				article.setPass(rs.getString("pass"));
-				article.setRegdate(rs.getTimestamp("regdate"));
-				article.setReadcount(rs.getInt("readcount"));
-				article.setRef(rs.getInt("ref"));
-				article.setStep(rs.getInt("step"));
-				article.setDepth(rs.getInt("depth"));
-				article.setContent(rs.getString("content"));
-				article.setIp(rs.getString("ip"));
-				articleList.add(article);
-			} while(rs.next());
+			
+			if(rs.next()) {
+				articleList = new ArrayList<BoardVO>(); // 수정 4
+				do {
+					BoardVO article = new BoardVO();
+					article.setNum(rs.getInt("num"));
+					article.setWriter(rs.getString("writer"));
+					article.setEmail(rs.getString("email"));
+					article.setSubject(rs.getString("subject"));
+					article.setPass(rs.getString("pass"));
+					article.setRegdate(rs.getTimestamp("regdate"));
+					article.setReadcount(rs.getInt("readcount"));
+					article.setRef(rs.getInt("ref"));
+					article.setStep(rs.getInt("step"));
+					article.setDepth(rs.getInt("depth"));
+					article.setContent(rs.getString("content"));
+					article.setIp(rs.getString("ip"));
+					articleList.add(article);
+				} while(rs.next());
+			}
 		} catch(Exception e) {
 			e.printStackTrace();
 		} finally {
