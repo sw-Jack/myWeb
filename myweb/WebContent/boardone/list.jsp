@@ -7,7 +7,7 @@
 
 <%
 	// 수정1
-	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM--dd HH:mm");
+	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 
 	// 수정 2
 	int count = 0;
@@ -58,7 +58,7 @@
 						<td align="center" width="50"><%=number-- %></td>
 						<td width="250">
 						<!-- 수정5 -->
-						<a href="content.jsp?num=<%=article.getNum() %>&pageNum=1">
+						&nbsp;<a href="content.jsp?num=<%=article.getNum() %>&pageNum=1">
 						<!-- 수정6 -->
 						<%=article.getSubject() %></a>
 						<% if(article.getReadcount() >= 20) { %>
