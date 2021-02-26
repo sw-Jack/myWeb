@@ -61,9 +61,9 @@ public class BoardDAO {
 			pstmt.setString(3, article.getSubject());
 			pstmt.setString(4, article.getPass());
 			pstmt.setTimestamp(5, article.getRegdate());
-			pstmt.setInt(6, article.getRef());
-			pstmt.setInt(7, article.getStep());
-			pstmt.setInt(8, article.getDepth());
+			pstmt.setInt(6, ref);
+			pstmt.setInt(7, step);
+			pstmt.setInt(8, depth);
 			pstmt.setString(9, article.getContent());
 			pstmt.setString(10, article.getIp());
 			pstmt.executeUpdate();
