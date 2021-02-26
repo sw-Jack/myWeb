@@ -100,19 +100,19 @@ public class BoardDAO {
 	}
 	
 	// 글 목록 가져오기 : board table에서 데이터를 가져오는 메서드 
-	public List<BoardVO> getArticles() {
+	public List<BoardVO> getArticles(int start, int end) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		List<BoardVO> articleList = null;
 		try {
 			conn = ConnUtil.getConnection();
-			//수정2
-			pstmt = conn.prepareStatement("select * from board order by num desc"); // 수정 3
-			rs = pstmt.executeQuery();
-			
+			pstmt = conn.prepareStatement("select * from (select rownum rnum, num, writer,email, subject, pass, regdate, readcount, ref, step, depth, content, ip from (select * from board order by ref desc, step asc)) where rnum >= ? and rnum<= ?"); 
+			pstmt.setInt(1, start);
+			pstmt.setInt(2, end);
+			rs = pstmt.executeQuery();			
 			if(rs.next()) {
-				articleList = new ArrayList<BoardVO>(); // 수정 4
+				articleList = new ArrayList<BoardVO>(end-start+1); 
 				do {
 					BoardVO article = new BoardVO();
 					article.setNum(rs.getInt("num"));
@@ -139,6 +139,149 @@ public class BoardDAO {
 		}
 		return articleList;
 	} 
+	
+	// 하나의 글 정보 가져오기 메서드
+	public BoardVO getArticle(int num) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		BoardVO article = null; // 가져올 글 정보
+		try {
+			conn = ConnUtil.getConnection();
+			pstmt = conn.prepareStatement("update board set readcount = readcount + 1 where num = ?");
+			pstmt.setInt(1, num);
+			pstmt.executeUpdate();
+			pstmt = conn.prepareStatement("select * from board where num = ?");
+			pstmt.setInt(1, num);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				article = new BoardVO();
+				article.setNum(rs.getInt("num"));
+				article.setWriter(rs.getString("writer"));
+				article.setEmail(rs.getString("email"));
+				article.setSubject(rs.getString("subject"));
+				article.setPass(rs.getString("pass"));
+				article.setRegdate(rs.getTimestamp("regdate"));
+				article.setReadcount(rs.getInt("readcount"));
+				article.setRef(rs.getInt("ref"));
+				article.setStep(rs.getInt("step"));
+				article.setDepth(rs.getInt("depth"));
+				article.setContent(rs.getString("content"));
+				article.setIp(rs.getString("ip"));
+			}
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			if(rs != null) try {rs.close();} catch(SQLException e) {}
+			if(pstmt != null) try {pstmt.close();} catch(SQLException e) {}
+			if(conn != null) try {conn.close();} catch(SQLException e) {}
+		}
+		return article;
+	}
+	
+	// 조회수 증가를 제외하고 num에 해당하는 게시물만 가져오는 메서드
+	public BoardVO updateGetArticle(int num) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		BoardVO article = null; // 해당 게시물
+		try {
+			conn = ConnUtil.getConnection();
+			pstmt = conn.prepareStatement("select * from board where num = ?");
+			pstmt.setInt(1, num);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				article = new BoardVO();
+				article.setNum(rs.getInt("num"));
+				article.setWriter(rs.getString("writer"));
+				article.setEmail(rs.getString("email"));
+				article.setSubject(rs.getString("subject"));
+				article.setPass(rs.getString("pass"));
+				article.setRegdate(rs.getTimestamp("regdate"));
+				article.setReadcount(rs.getInt("readcount"));
+				article.setRef(rs.getInt("ref"));
+				article.setStep(rs.getInt("step"));
+				article.setDepth(rs.getInt("depth"));
+				article.setContent(rs.getString("content"));
+				article.setIp(rs.getString("ip"));
+			 }
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			if(rs != null) try {rs.close();} catch(SQLException e) {}
+			if(pstmt != null) try {pstmt.close();} catch(SQLException e) {}
+			if(conn != null) try {conn.close();} catch(SQLException e) {}
+		}
+		return article;
+	}
+	
+	// 게시글 수정 메서드
+	public int updateArticle(BoardVO article) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String dbPass = ""; // DB에 저장된 비밀번호
+		int result = -1; // 결과값
+		try {
+			conn = ConnUtil.getConnection();
+			pstmt = conn.prepareStatement("select pass from board where num = ?");
+			pstmt.setInt(1, article.getNum());
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				dbPass = rs.getString("pass");
+				if(dbPass.equals(article.getPass())) {
+					pstmt = conn.prepareStatement("update board set writer = ?, email = ?, subject = ?, content = ? where num = ?");
+					pstmt.setString(1, article.getWriter());
+					pstmt.setString(2, article.getEmail());
+					pstmt.setString(3, article.getSubject());
+					pstmt.setString(4, article.getContent());
+					pstmt.setInt(5, article.getNum());
+					pstmt.executeUpdate();
+					result = 1; // 수정 성공
+				} else {
+					result = 0; // 수정 실패
+				}
+			} 
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			if(rs != null) try {rs.close();} catch(SQLException e) {}
+			if(pstmt != null) try {pstmt.close();} catch(SQLException e) {}
+			if(conn != null) try {conn.close();} catch(SQLException e) {}
+		}
+		return result;
+	}
+	
+	// 게시글 삭제 메서드
+	public int deleteArticle(int num, String pass) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String dbPass = "";
+		int result = -1;
+		try {
+			conn = ConnUtil.getConnection();
+			pstmt = conn.prepareStatement("select pass from board where num = ?");
+			pstmt.setInt(1, num);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				dbPass = rs.getString("pass");
+				if(dbPass.equals(pass)) {
+					pstmt = conn.prepareStatement("delete from board where num = ?");
+					pstmt.setInt(1, num);
+					pstmt.executeUpdate();
+					result = 1; // 글 삭제 성공
+				} else result = 0; // 비밀번호 틀림, 글 삭제 실패
+			}
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			if(rs != null) try {rs.close();} catch(SQLException e) {}
+			if(pstmt != null) try {pstmt.close();} catch(SQLException e) {}
+			if(conn != null) try {conn.close();} catch(SQLException e) {}
+		}
+		return result;
+	}
 }
 
 
