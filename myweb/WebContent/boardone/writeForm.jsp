@@ -36,7 +36,7 @@
 			<tr>
 				<td width="100" bgcolor="<%=value_c %>" align="center">이름</td>
 				<td width="330">
-					<input type="text" size="15" maxlength="15" name="writer"/>
+					<input type="text" size="12" maxlength="12" name="writer"/>
 				</td>
 			</tr>
 			<tr>
@@ -49,9 +49,9 @@
 				<td width="100" bgcolor="<%=value_c %>" align="center">제목</td>
 				<td width="330">
 					<% if(request.getParameter("num") == null) { // 새 글인 경우 %> 
-						<input type="text" size="55" maxlength="55" name="subject"/>
+						<input type="text" size="55" maxlength="50" name="subject"/>
 					<% } else { // 답변 글인 경우 %> 
-						<input type="text" size="55" maxlength="55" name="subject" value="[답변]"/>
+						<input type="text" size="55" maxlength="50" name="subject" value="[답변]"/>
 					<% } %>
 				</td>
 			</tr>
@@ -64,7 +64,7 @@
 			<tr>
 				<td width="100" bgcolor="<%=value_c %>" align="center">비밀번호</td>
 				<td width="330">
-					<input type="password" size="15" maxlength="15" name="pass"/>
+					<input type="password" size="10" maxlength="10" name="pass"/>
 				</td>
 			</tr>
 			<tr>
