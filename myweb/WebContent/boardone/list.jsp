@@ -18,7 +18,7 @@
 	if(count > 0) {
 		articleList = dbPro.getArticles();
 	}
-	number = count;
+	number = count; // 전체 글 개수 
 %>
 <html>
 <head>
