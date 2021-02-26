@@ -29,6 +29,17 @@ select * from board;
 desc board;
 
 
+select * 
+from (
+   select rownum rnum, num, writer, subject, ref, step, depth
+   from (
+      select num, writer, subject, ref, step, depth
+      from board order by ref desc, step asc
+      )
+   )
+where rnum>=1 and rnum<=5;
+
+
 
 
 
