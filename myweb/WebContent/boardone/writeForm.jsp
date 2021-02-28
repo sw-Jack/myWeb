@@ -20,8 +20,8 @@
 			depth = Integer.parseInt(request.getParameter("depth"));
 		}
 %>
-<body bgcolor="<%=bodyback_c %>">
-	<center><b>글쓰기</b></center>
+<body bgcolor="<%=bodyback_c %>" align="center">
+	<b>글쓰기</b>
 	<form method="post" name="writeForm" action="writeProc.jsp" onsubmit="return writeSave()"> <!-- onsubmit은 submit 이전에 먼저 수행 -->
 		<input type="hidden" name="num" value="<%=num %>">
 		<input type="hidden" name="ref" value="<%=ref %>">
@@ -35,19 +35,19 @@
 			</tr>
 			<tr>
 				<td width="100" bgcolor="<%=value_c %>" align="center">이름</td>
-				<td width="330">
+				<td width="330" align="left">
 					<input type="text" size="12" maxlength="12" name="writer"/>
 				</td>
 			</tr>
 			<tr>
 				<td width="100" bgcolor="<%=value_c %>" align="center">이메일</td>
-				<td width="330">
+				<td width="330" align="left">
 					<input type="text" size="30" maxlength="30" name="email"/>
 				</td>
 			</tr>
 			<tr>
 				<td width="100" bgcolor="<%=value_c %>" align="center">제목</td>
-				<td width="330">
+				<td width="330" align="left">
 					<% if(request.getParameter("num") == null) { // 새 글인 경우 %> 
 						<input type="text" size="55" maxlength="50" name="subject"/>
 					<% } else { // 답변 글인 경우 %> 
@@ -57,13 +57,13 @@
 			</tr>
 			<tr>
 				<td width="100" bgcolor="<%=value_c %>" align="center">내용</td>
-				<td width="330">
+				<td width="330" align="left">
 					<textarea name="content" rows="15" cols="50"></textarea>
 				</td>
 			</tr>
 			<tr>
 				<td width="100" bgcolor="<%=value_c %>" align="center">비밀번호</td>
-				<td width="330">
+				<td width="330" align="left">
 					<input type="password" size="10" maxlength="10" name="pass"/>
 				</td>
 			</tr>
