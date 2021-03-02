@@ -31,6 +31,11 @@
 		<res-auth>Container</res-auth>
 	</resource-ref>
 
+	<!-- session 타임아웃 설정 : 10분 -->
+	<session-config>
+		<session-timeout>10</session-timeout>
+	</session-config>
+
 	<error-page>
 		<error-code>404</error-code>
 		<location>/error/error404.jsp</location>
