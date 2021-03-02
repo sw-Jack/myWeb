@@ -8,7 +8,7 @@
 	Date time = new Date();
 	SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 	// session 타임아웃 설정
-	session.setMaxInactiveInterval(10 * 60); // 초 단위 : (1분)
+	session.setMaxInactiveInterval(10 * 60); // 초 단위 : 1분
 %>
 <html>
 <head>
