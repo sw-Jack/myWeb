@@ -50,6 +50,14 @@
 		<location>/error/errorNullPointer.jsp</location>
 	</error-page>
 	-->
+	
+	<!-- TLD 파일 내용 추가 -->
+	<jsp-config>
+		<taglib>
+			<taglib-uri>/WEB-INF/tlds/el-functions.tld</taglib-uri>
+			<taglib-location>/WEB-INF/tlds/el-functions.tld</taglib-location>
+		</taglib>
+	</jsp-config>
 
 	<servlet>
 		<servlet-name>MyOne</servlet-name>
