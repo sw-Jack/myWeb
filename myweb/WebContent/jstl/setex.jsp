@@ -1,0 +1,26 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<jsp:useBean id="vo" class="jstl.MemberVO"/>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JSTL set Example</title>
+</head>
+<body>
+	<!-- target 에는 맵이나 빈(클래스)이 와야 함 -->
+	<c:set target="${vo }" property="name" value="홍길동"/>
+	<c:set target="${vo }" property="email">
+		hong@naver.com
+	</c:set>
+	<c:set var="age" value="30"/>
+	<c:set target="${vo }" property="age" value="${age }"/>
+	<h3>회원정보</h3>
+	<ul>
+		<li>이름 : ${vo.name }</li>
+		<li>이름 : ${vo.email }</li>
+		<li>이름 : ${vo.age }</li>
+	</ul>
+</body>
+</html>
