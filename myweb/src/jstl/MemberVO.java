@@ -3,11 +3,11 @@ package jstl;
 public class MemberVO {
 	private String name;
 	private String email;
-	private String age;
+	private int age;
 	
 	public MemberVO() {}
 
-	public MemberVO(String name, String email, String age) {
+	public MemberVO(String name, String email, int age) {
 		this.name = name;
 		this.email = email;
 		this.age = age;
@@ -29,11 +29,11 @@ public class MemberVO {
 		this.email = email;
 	}
 
-	public String getAge() {
+	public int getAge() {
 		return age;
 	}
 
-	public void setAge(String age) {
+	public void setAge(int age) {
 		this.age = age;
 	}
 }
