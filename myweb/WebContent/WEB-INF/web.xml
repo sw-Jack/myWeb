@@ -59,6 +59,24 @@
 		</taglib>
 	</jsp-config>
 
+	<!-- 서블릿 추가 -->
+	<servlet>
+		<servlet-name>controlOne</servlet-name>
+		<servlet-class>mvc.control.ControlServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>controlOne</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>myControl</servlet-name>
+		<servlet-class>mvcMem.control.ControlServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>myControl</servlet-name>
+		<url-pattern>*.mdo</url-pattern>
+	</servlet-mapping>
+	
 	<servlet>
 		<servlet-name>MyOne</servlet-name>
 		<servlet-class>sample.MyServlet</servlet-class>
