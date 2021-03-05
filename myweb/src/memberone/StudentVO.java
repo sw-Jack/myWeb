@@ -11,6 +11,22 @@ public class StudentVO {
 	private String zipcode;
 	private String address1;
 	private String address2;
+	
+	public StudentVO() {}
+	
+	public StudentVO(String id, String pass, String name, String phone1, String phone2, String phone3, String email,
+			String zipcode, String address1, String address2) {
+		this.id = id;
+		this.pass = pass;
+		this.name = name;
+		this.phone1 = phone1;
+		this.phone2 = phone2;
+		this.phone3 = phone3;
+		this.email = email;
+		this.zipcode = zipcode;
+		this.address1 = address1;
+		this.address2 = address2;
+	}
 	public String getId() {
 		return id;
 	}
