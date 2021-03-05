@@ -5,10 +5,11 @@ import java.io.IOException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import memberone.StudentVO;
+
 import mvcMem.control.Action;
 import mvcMem.control.ActionForward;
 import mvcMem.model.StudentDAO;
+import mvcMem.model.StudentVO;
 
 public class RegProcAction implements Action {
 	@Override
