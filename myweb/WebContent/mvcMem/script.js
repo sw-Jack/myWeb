@@ -98,73 +98,78 @@ function inputCheck() {
 	document.regForm.submit();
 } 
 
-// 회원정보 수정 시 모든 정보 입력 여부 체크 메서드 
 function updateCheck() {
-	if(document.regForm.pass.value == "") {
+	if(document.modifyForm.id.value == "") {
+		alert("아이디를 입력해주세요.");
+		document.modifyForm.id.focus();
+		return;
+	}
+	if(document.modifyForm.pass.value == "") {
 		alert("비밀번호를 입력해주세요.");
-		document.regForm.pass.focus();
+		document.modifyForm.pass.focus();
 		return;
 	}
-	if(document.regForm.repass.value == "") {
+	if(document.modifyForm.repass.value == "") {
 		alert("비밀번호를 확인해주세요.");
-		document.regForm.repass.focus();
+		document.modifyForm.repass.focus();
 		return;
 	}
-	if(document.regForm.pass.value != document.regForm.repass.value) {
+	if(document.modifyForm.pass.value != document.modifyForm.repass.value) {
 		alert("비밀번호가 일치하지 않습니다.");
-		document.regForm.repass.focus();
+		document.modifyForm.repass.focus();
 		return;
 	}
-	if(document.regForm.name.value == "") {
+	if(document.modifyForm.name.value == "") {
 		alert("이름을 입력해주세요.");
-		document.regForm.name.focus();
+		document.modifyForm.name.focus();
 		return;
 	}
-	if(document.regForm.phone1.value == "") {
+	if(document.modifyForm.phone1.value == "") {
 		alert("통신사를 입력해주세요.");
-		document.regForm.phone1.focus();
+		document.modifyForm.phone1.focus();
 		return;
 	}
-	if(document.regForm.phone2.value == "") {
+	if(document.modifyForm.phone2.value == "") {
 		alert("전화번호 앞자리를 입력해주세요.");
-		document.regForm.phone2.focus();
+		document.modifyForm.phone2.focus();
 		return;
 	}
-	if(document.regForm.phone3.value == "") {
+	if(document.modifyForm.phone3.value == "") {
 		alert("전화번호 뒷자리를 입력해주세요. ");
-		document.regForm.phone3.focus();
+		document.modifyForm.phone3.focus();
 		return;
 	}
-	if(document.regForm.email.value == "") {
+	if(document.modifyForm.email.value == "") {
 		alert("이메일을 입력해주세요.");
-		document.regForm.email.focus();
+		document.modifyForm.email.focus();
 		return;
 	}
 	
 	var regExp = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
-	if(!regExp.test(document.regForm.email.value)) {
+	if(!regExp.test(document.modifyForm.email.value)) {
 		alert("잘못된 이메일 주소입니다.");
-		document.regForm.email.focus();
+		document.modifyForm.email.focus();
 		return;
 	}
-	
-	if(document.regForm.zipcode.value == "") {
+	if(document.modifyForm.zipcode.value == "") {
 		alert("우편번호를 입력해주세요.");
-		document.regForm.zipcode.focus();
+		document.modifyForm.zipcode.focus();
 		return;
 	}
-	if(document.regForm.address1.value == "") {
+	if(document.modifyForm.address1.value == "") {
 		alert("주소를  입력해주세요.");
-		document.regForm.address1.focus();
+		document.modifyForm.address1.focus();
 		return;
 	}
-	if(document.regForm.address2.value == "") {
+	if(document.modifyForm.address2.value == "") {
 		alert("상세주소를 입력해주세요.");
-		document.regForm.address2.focus();
+		document.modifyForm.address2.focus();
 		return;
 	}
-	document.regForm.submit();
-}
+	document.modifyForm.submit();
+} 
+
+
 
 
 
