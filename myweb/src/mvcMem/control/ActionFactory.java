@@ -1,10 +1,14 @@
 package mvcMem.control;
 
+import mvcMem.action.DeleteFormAction;
+import mvcMem.action.DeleteProcAction;
 import mvcMem.action.IdCheckAction;
 import mvcMem.action.IndexAction;
 import mvcMem.action.LoginFormAction;
 import mvcMem.action.LoginProcAction;
 import mvcMem.action.LogoutAction;
+import mvcMem.action.ModifyFormAction;
+import mvcMem.action.ModifyProcAction;
 import mvcMem.action.RegFormAction;
 import mvcMem.action.RegProcAction;
 import mvcMem.action.ZipCheckAction;
@@ -41,24 +45,21 @@ public class ActionFactory {
 		case "regProc" :
 			action = new RegProcAction();
 			break;
-		/*
 		case "modifyForm" :
 			action = new ModifyFormAction();
 			break;
-		case : "modifyProc" :
+		case "modifyProc" :
 			action = new ModifyProcAction();
 			break;
-		case : "deleteForm" :
+		case "deleteForm" :
 			action = new DeleteFormAction();
 			break;
-		case : "deleteProc" :
+		case "deleteProc" :
 			action = new DeleteProcAction();
 			break;
-		*/
 		case "idCheck" :
 			action = new IdCheckAction();
 			break;
-
 		case "zipCheck" :
 			action = new ZipCheckAction();
 			break;
