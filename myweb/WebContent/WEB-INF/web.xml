@@ -59,7 +59,36 @@
 		</taglib>
 	</jsp-config>
 
-	<!-- 서블릿 추가 -->
+	<!-- 서블릿 추가 (최신) -->
+	<servlet>
+		<servlet-name>Controller</servlet-name>
+		<servlet-class>board.controller.ControllerAction</servlet-class>
+		<init-param>
+			<param-name>propertyConfig</param-name>
+			<param-value>CommandPro.properties</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Controller</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 서블릿 추가 (최신-1) 
+	<servlet>
+		<servlet-name>ControllerURI</servlet-name>
+		<servlet-class>mvc.Controller</servlet-class>
+		<init-param>
+			<param-name>propertyConfig</param-name>
+			<param-value>Command.properties</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ControllerURI</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+	-->
+ 	
+	<!-- 서블릿 추가 
 	<servlet>
 		<servlet-name>controlOne</servlet-name>
 		<servlet-class>mvc.control.ControlServlet</servlet-class>
@@ -68,6 +97,8 @@
 		<servlet-name>controlOne</servlet-name>
 		<url-pattern>*.do</url-pattern>
 	</servlet-mapping>
+	-->
+	
 	<servlet>
 		<servlet-name>myControl</servlet-name>
 		<servlet-class>mvcMem.control.ControlServlet</servlet-class>
