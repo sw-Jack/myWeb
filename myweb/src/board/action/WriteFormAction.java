@@ -4,7 +4,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class WriteFormAction implements CommandAction {
-
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		// 제목 글과 답변 글의 구분
@@ -26,5 +25,4 @@ public class WriteFormAction implements CommandAction {
 		request.setAttribute("depth", new Integer(depth));
 		return "/board/writeForm.jsp"; // 해당 뷰
 	}
-
 }
