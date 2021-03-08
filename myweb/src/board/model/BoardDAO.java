@@ -12,6 +12,8 @@ import boardone.ConnUtil;
 public class BoardDAO {
 	private static BoardDAO instance = null;
 	private BoardDAO() {}
+	
+	// 해당 클래스 객체 얻는 메서드 : 해당 메서드를 통해서만 외부에서 접근 가능 : 싱글톤 패턴으로 구현
 	public static BoardDAO getInstance() {
 		if(instance == null) {
 			synchronized (BoardDAO.class) {
@@ -85,6 +87,7 @@ public class BoardDAO {
 		return articleList;
 	} 
 	
+	// 글 등록 메서드
 	public void insertArticle(BoardVO article) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
