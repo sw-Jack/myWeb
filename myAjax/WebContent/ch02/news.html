@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>뉴스</title>
+<script type="text/javascript" src="httpRequest.js"></script>
+<script type="text/javascript">
+	function loadNews() {
+		sendRequest("getNewsTitles.jsp", null, loadedNews, "GET");
+	}
+	function loadedNews() {
+		if(httpRequest.readyState == 4) {
+			if(httpRequest.status == 200) {
+				var newsList = document.getElementById("newsList");
+				newsList.innerHTML = httpRequest.responseText;
+			}
+		}
+	}
+	window.onload = function() {
+		loadNews();
+	}
+</script>
+</head>
+<body>
+	<div id="newsList"></div>
+</body>
+</html>
