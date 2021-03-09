@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>1초마다 현재 시간을 출력해주는 예제</title>
+<script type="text/javascript">
+	function printTime() {
+		var clock = document.getElementById("clock");
+		var now = new Date();
+		clock.innerHTML = now.getFullYear() + "년 " + (now.getMonth() + 1) + "월 " + now.getDate() + "일 "
+							+ now.getHours() + "시 " + now.getMinutes() + "분 " + now.getSeconds() + "초 ";
+		setTimeout("printTime()", 1000);
+	}
+	
+	window.onload = function() {
+		printTime();
+	}
+</script>
+</head>
+<body>
+	현재 시간은 <span id="clock"></span>입니다.
+</body>
+</html>
