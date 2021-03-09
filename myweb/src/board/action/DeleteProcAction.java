@@ -6,7 +6,6 @@ import javax.servlet.http.HttpServletResponse;
 import board.model.BoardDAO;
 
 public class DeleteProcAction implements CommandAction {
-
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		request.setCharacterEncoding("utf-8");
@@ -20,5 +19,4 @@ public class DeleteProcAction implements CommandAction {
 		request.setAttribute("check", check);
 		return "/board/deleteProc.jsp"; // ÇØ´ç ºä
 	}
-
 }
