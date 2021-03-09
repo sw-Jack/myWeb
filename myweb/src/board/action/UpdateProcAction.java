@@ -7,7 +7,6 @@ import board.model.BoardDAO;
 import board.model.BoardVO;
 
 public class UpdateProcAction implements CommandAction {
-
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		request.setCharacterEncoding("utf-8");
@@ -26,5 +25,4 @@ public class UpdateProcAction implements CommandAction {
 		request.setAttribute("check", new Integer(check));
 		return "/board/updateProc.jsp";
 	}
-
 }
