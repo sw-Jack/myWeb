@@ -13,7 +13,7 @@
 </head>
 <body bgcolor="${bodyback_c }">
 <center>
-	<b>>글수정</b>
+	<b>글수정</b>
 	<br>
 	<form action="/myweb/board/updateProc.do" name="writeForm" onsubmit="return writeSave()">
 		<table width="400" border="1" cellspacing="0" cellpadding="0" align="center">
