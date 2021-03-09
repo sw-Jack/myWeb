@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html;charset="utf-8">
+<title>간단한 Ajax 예제</title>
+<script type="text/javascript">
+	var httpRequest = null;
+	function getXMLHttpRequest() { // IE Brower인 경우
+		if(window.ActiveXObject) {
+			try {
+				return new ActiveXObject("Msxml2.XMLHTTP"); // **XMLHttpRequest
+			} catch(e) {
+				try {
+					return new ActiveXObject("Microsoft.XMLHTTP");
+				} catch(ee) {
+					return null;
+				}
+			}
+		} else if(window.XMLHttpRequest) { // 이외의 Brower인 경우 : Chrome, firefox...
+			return new XMLHttpRequest(); // ****XMLHttpRequest
+		} else {
+			return null;
+		}
+	}
+	
+	function load(url) {
+		httpRequest = getXMLHttpRequest();
+		httpRequest.onreadystatechange = viewMessage; // readyState 프로퍼티 값이 변경될 때 해당 함수(viewMessage) 실행
+		httpRequest.open("GET", url, true); // 설정 (true는 비동기 방식)
+		httpRequest.send(null);
+	}
+	
+	function viewMessage() {
+		if(httpRequest.readyState == 4) { // readyState 4 : COMPLETED
+			if(httpRequest.status == 200) { // status 200 : 요청 성공
+				alert(httpRequest.responseText); // Text 파일
+			} else {
+				alert("실패  : " + httpRequest.status); // 실패 시 status 프로퍼티 값 출력
+			}
+		}
+	}
+</script>
+</head>
+<body>
+	<input type="button" value="simple.txt" onclick="load('simple.txt')"/>
+	<input type="button" value="simple2.txt" onclick="load('simple2.txt')"/>
+	<input type="button" value="simple.jsp" onclick="load('simple.jsp')"/>
+	<input type="button" value="simple2.jsp" onclick="load('simple2.jsp')"/>
+</body>
+</html>
