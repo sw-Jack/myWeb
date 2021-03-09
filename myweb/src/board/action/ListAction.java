@@ -10,7 +10,6 @@ import board.model.BoardVO;
 
 // *Action.java : 명령어 처리 요청을 처리해주는 클래스 CommandAction 인터페이스로 부터 다형성 적용
 public class ListAction implements CommandAction {
-
 	// 글목록 처리
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
@@ -44,5 +43,4 @@ public class ListAction implements CommandAction {
 		request.setAttribute("articleList", articleList);
 		return "/board/list.jsp"; // 해당 뷰
 	}
-
 }
