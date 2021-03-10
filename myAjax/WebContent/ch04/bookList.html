@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>책 목록</title>
+<script type="text/javascript" src="ajax.js"></script>
+<script type="text/javascript">
+	var xmlDoc = null;
+	var xslDoc = null;
+	function loadBooks() { // XML 로딩 여부에 상관없이 XSL도 읽어옴
+		new ajax.xhr.Request("books.jsp", null, loadedBooksXML, "GET");
+		new ajax.xhr.Request("books.xsl", null, loadedBooksXML, "GET");
+	}
+	function loadedBooksXML(req) {
+		if(req.readyState == 4) {
+			if(req.status = 200) {
+				xmlDoc = req.responseXML;
+				doXSLT(); // XML 문서 로딩 후 doXSLT() 실행
+			}
+		}
+	}
+	
+	function loadedBooksXML(req) {
+		if(req.readyState == 4) {
+			if(req.status == 200) {
+				xslDoc = req.responseXML;
+				doXSLT(); // XSL 문서 로딩 후 doXSLT() 실행
+			}
+		}
+	}
+	
+	function doXSLT(req) {
+		if(xmlDoc == null || xslDoc == null) // 두 문서를 모두 로딩한 경우에만 실행
+			return;
+		var bookList = document.getElementById("bookList");
+		if(window.ActiveXObject) {
+			bookList.innerHTML = xmlDoc.transformNode(xslDoc);
+		} else {
+			var xsltProc = new XSLTProcessor();
+			xsltProc.importStylesheet(xslDoc);
+			var fragment = xsltProc.transformToFragment(xmlDoc, document);
+			bookList.appendChild(fragment);
+		}
+	}
+	window.onload = function() {
+		loadBooks();
+	}
+</script>
+</head>
+<body>
+	<h1>신규 책 목록</h1>
+	<div id="bookList"></div>
+</body>
+</html>

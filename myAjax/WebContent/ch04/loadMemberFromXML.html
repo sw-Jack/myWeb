@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>XML로부터 객체 생성</title>
+<script type="text/javascript" src="ajax.js"></script>
+<script type="text/javascript" src="member.js"></script>
+<script type="text/javascript">
+	window.onload = function() {
+		new ajax.xhr.Request("member_xml.jsp", "", viewInfo, "GET");
+	}
+	
+	function viewInfo(req) {
+		if(req.readyState == 4) {
+			if(req.status == 200) {
+				var docXML = req.responseXML;
+				var code = docXML.getElementsByTagName("code").item(0).firstChild.nodeValue;
+				if(code == 'success') {
+					var name = docXML.getElementsByTagName("name").item(0).firstChild.nodeValue;
+					var id = docXML.getElementsByTagName("id").item(0).firstChild.nodeValue;
+					var sno = docXML.getElementsByTagName("sno").item(0).firstChild.nodeValue;
+					var mem = new Member(name, id, sno);
+					alert(mem.toString() + ", " + mem.getAge() + "세");
+				} else {
+					alert("실패");
+				}
+			}
+		} else {
+			alert("에러 발생 : " + req.status);
+		}
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>

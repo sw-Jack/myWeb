@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Member 클래스 사용</title>
+<script type="text/javascript" src="log.js"></script>
+<script type="text/javascript" src="member_json.js"></script>
+<script type="text/javascript">
+	window.onload = function() {
+		var mem = new Member("javaline", "Lee", "25");
+		log('변경전');
+		log('회원 : ' + mem.toString());
+		log('나이 : ' + mem.getAge());
+		mem.setValue("arizona", "Lee", "20")
+		log('변경후');
+		log('회원 : ' + mem.toString());
+		log('나이 : ' + mem.getAge());
+		
+	}
+</script>
+</head>
+<body>
+	<div id="debugConsole"></div>
+</body>
+</html>
